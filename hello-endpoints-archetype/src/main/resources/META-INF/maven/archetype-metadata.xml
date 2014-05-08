@@ -34,16 +34,19 @@
       <directory></directory>
       <includes>
         <include>nbactions.xml</include>
+        <include>README.md</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
         <include>LICENSE</include>
-        <include>README.md</include>
         <include>CONTRIB.md</include>
         <include>.gitignore</include>
       </includes>
     </fileSet>
   </fileSets>
+  <requiredProperties>
+    <requiredProperty key="appengine-version"/>
+  </requiredProperties>
 </archetype-descriptor>
