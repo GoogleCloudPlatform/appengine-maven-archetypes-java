@@ -22,15 +22,13 @@ A "hello world" application for Google Cloud Endpoints in Java.
 1. Optional step: These sub steps are not required but you need to do
    this if you want to use auth protected API methods.
 
-    1. Update the values in ${package}.Constants to reflect the
-       respective client IDs you have registered in the [APIs
-       Console][6].
+    1. Update the values in `src/main/java/${packageInPathFormat}/Constants.java`
+       to reflect the respective client IDs you have registered in the
+       [APIs Console][6].
 
     1. Update the value of `google.devrel.samples.helloendpoints.CLIENT_ID`
        in `src/main/webapp/base.js` to reflect the web client ID you have
        registered in the [APIs Console][4].
-
-1. `mvn clean install`
 
 1. Run the application with `mvn appengine:devserver`, and ensure it's
    running by visiting your local server's address (by default
@@ -42,8 +40,9 @@ A "hello world" application for Google Cloud Endpoints in Java.
 
    It will generate a jar file named something like
    `helloworld-v1-1.18.0-rc-SNAPSHOT.jar` under the
-   `target/endpoints-client-libs` directory of your project, as well
-   as install the artifact into your local maven repository.
+   `target/endpoints-client-libs/<api-name>/target` directory of your
+   project, as well as install the artifact into your local maven
+   repository.
 
 1. Deploy your application to Google App Engine with
 

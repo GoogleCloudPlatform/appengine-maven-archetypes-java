@@ -19,20 +19,18 @@ A skeleton application for Google Cloud Endpoints in Java.
    ID you have registered in the App Engine admin console and would
    like to use to host your instance of this sample.
 
-1. Add your API method to ${package}.YourFirstAPI.
+1. Add your API method to `src/main/java/${packageInPathFormat}/YourFirstAPI.java`.
 
 1. Optional step: These sub steps are not required but you need this
    if you want to have auth protected methods.
 
-    1. Update the values in ${package}.Constants to
-       reflect the respective client IDs you have registered in the
+    1. Update the values in `src/main/java/${packageInPathFormat}/Constants.java`
+       to reflect the respective client IDs you have registered in the
        [APIs Console][6]. 
 
-    1. You also need to supply the web client
-       ID you have registered in the [APIs Console][4] to your client
-       of choice (web, Android, iOS).
-
-1. `mvn clean install`
+    1. You also need to supply the web client ID you have registered
+       in the [APIs Console][4] to your client of choice (web, Android,
+       iOS).
 
 1. Run the application with `mvn appengine:devserver`, and ensure it's
    running by visiting your local server's api explorer's address (by
@@ -43,8 +41,9 @@ A skeleton application for Google Cloud Endpoints in Java.
    $ mvnappengine:endpoints_get_client_lib
 
    It will generate a client library jar file under the
-   `target/endpoints-client-libs` directory of your project, as well
-   as install the artifact into your local maven repository.
+   `target/endpoints-client-libs/<api-name>/target` directory of your
+   project, as well as install the artifact into your local maven
+   repository.
 
 1. Deploy your application to Google App Engine with
 

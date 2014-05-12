@@ -5,6 +5,7 @@ package ${package};
 
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
+import com.google.api.server.spi.response.NotFoundException;
 import com.google.appengine.api.users.User;
 
 import java.util.ArrayList;
@@ -30,8 +31,12 @@ public class Greetings {
     greetings.add(new HelloGreeting("goodbye world!"));
   }
 
-  public HelloGreeting getGreeting(@Named("id") Integer id) {
-    return greetings.get(id);
+  public HelloGreeting getGreeting(@Named("id") Integer id) throws NotFoundException {
+    try {
+      return greetings.get(id);
+    } catch (IndexOutOfBoundsException e) {
+      throw new NotFoundException("Greeting not found with an index: " + id);
+    }
   }
 
   public ArrayList<HelloGreeting> listGreeting() {

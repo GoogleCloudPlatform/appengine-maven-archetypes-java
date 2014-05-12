@@ -96,6 +96,8 @@ google.devrel.samples.hello.getGreeting = function(id) {
       function(resp) {
         if (!resp.code) {
           google.devrel.samples.hello.print(resp);
+        } else {
+          window.alert(resp.message);
         }
       });
 };
