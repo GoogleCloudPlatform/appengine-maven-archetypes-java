@@ -1,3 +1,4 @@
+
 /**
  * @fileoverview
  * Provides methods for the Hello Endpoints sample UI and interaction with the
@@ -23,7 +24,7 @@ google.devrel.samples.hello = google.devrel.samples.hello || {};
  * @type {string}
  */
 google.devrel.samples.hello.CLIENT_ID =
-    'replace this with your web application client ID';
+    '${web-client-id}';
 
 /**
  * Scopes used by the application.

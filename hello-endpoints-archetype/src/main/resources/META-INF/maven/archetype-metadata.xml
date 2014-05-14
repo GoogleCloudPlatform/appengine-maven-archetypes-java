@@ -15,12 +15,12 @@
         <include>**/*.xml</include>
         <include>**/*.html</include>
         <include>**/*.properties</include>
+        <include>**/*.js</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
       <directory>src/main/webapp</directory>
       <includes>
-        <include>**/*.js</include>
         <include>**/*.css</include>
       </includes>
     </fileSet>
@@ -47,6 +47,20 @@
     </fileSet>
   </fileSets>
   <requiredProperties>
-    <requiredProperty key="appengine-version"/>
+    <requiredProperty key="appengine-version">
+      <defaultValue>1.9.4</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="application-id">
+      <defaultValue>your-app-id</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="web-client-id">
+      <defaultValue>replace this with your web client ID</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="android-client-id">
+      <defaultValue>replace this with your Android client ID</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="ios-client-id">
+      <defaultValue>replace this with your iOS client ID</defaultValue>
+    </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>

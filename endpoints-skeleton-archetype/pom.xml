@@ -4,7 +4,7 @@
 
   <groupId>com.google.appengine.archetypes</groupId>
   <artifactId>endpoints-skeleton-archetype</artifactId>
-  <version>1.1</version>
+  <version>1.1.1-1.9.4-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>endpoints-skeleton-archetype</name>
