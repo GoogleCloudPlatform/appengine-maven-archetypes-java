@@ -8,8 +8,8 @@
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
 
 <%-- //[START imports]--%>
-<%@ page import="com.example.guestbook.Greeting" %>
-<%@ page import="com.example.guestbook.Guestbook" %>
+<%@ page import="${package}.Greeting" %>
+<%@ page import="${package}.Guestbook" %>
 <%@ page import="com.googlecode.objectify.Key" %>
 <%@ page import="com.googlecode.objectify.ObjectifyService" %>
 <%-- //[END imports]--%>
