@@ -18,6 +18,12 @@
   </licenses>
   <developers>
     <developer>
+      <name>Takashi Matsuo</name>
+      <email>tmatsuo@google.com</email>
+      <organization>Google</organization>
+      <organizationUrl>http://www.google.com</organizationUrl>
+    </developer>
+    <developer>
       <name>Les Vogel</name>
       <email>lesv@google.com</email>
       <organization>Google</organization>

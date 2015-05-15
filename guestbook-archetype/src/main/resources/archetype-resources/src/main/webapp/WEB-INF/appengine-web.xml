@@ -1,10 +1,7 @@
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="utf-8"?>
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-    <application>${symbol_dollar}{app.id}</application>
-    <version>${symbol_dollar}{app.version}</version>
+    <application>${app.id}</application>
+    <version>${app.version}</version>
     <threadsafe>true</threadsafe>
 
     <system-properties>
