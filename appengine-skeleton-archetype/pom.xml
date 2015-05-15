@@ -4,7 +4,7 @@
 
   <groupId>com.google.appengine.archetypes</groupId>
   <artifactId>appengine-skeleton-archetype</artifactId>
-  <version>2.0.0-1.9.10</version>
+  <version>2.0.0-1.9.20</version>
   <packaging>maven-archetype</packaging>
 
   <name>appengine-skeleton-archetype</name>
@@ -18,8 +18,8 @@
   </licenses>
   <developers>
     <developer>
-      <name>Takashi Matsuo</name>
-      <email>tmatsuo@google.com</email>
+      <name>Les Vogel</name>
+      <email>lesv@google.com</email>
       <organization>Google</organization>
       <organizationUrl>http://www.google.com</organizationUrl>
     </developer>

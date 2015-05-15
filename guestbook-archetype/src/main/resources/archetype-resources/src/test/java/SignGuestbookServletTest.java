@@ -19,8 +19,8 @@
 
 package ${package};
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -34,19 +34,27 @@ import com.google.appengine.api.users.UserServiceFactory;
 import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestConfig;
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 
+import com.googlecode.objectify.Objectify;
+import com.googlecode.objectify.ObjectifyFactory;
+import com.googlecode.objectify.ObjectifyService;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@SuppressWarnings("deprecation")
 public class SignGuestbookServletTest {
 
   private SignGuestbookServlet signGuestbookServlet;
+  private Closeable closeable = null;    // Objectify
+
 
   private final LocalServiceTestHelper helper =
       new LocalServiceTestHelper(new LocalDatastoreServiceTestConfig())
@@ -57,11 +65,17 @@ public class SignGuestbookServletTest {
   @Before
   public void setupSignGuestBookServlet() {
     helper.setUp();
+    OfyHelper.register();   // Needed for Objectify
+    closeable = ObjectifyService.begin();  // Objectify
+
     signGuestbookServlet = new SignGuestbookServlet();
   }
 
   @After
-  public void tearDownHelper() {
+  public void tearDownHelper() throws IOException {
+    if(closeable != null) {
+      closeable.close();  // Objectify
+    }
     helper.tearDown();
   }
 
@@ -90,7 +104,7 @@ public class SignGuestbookServletTest {
 
     assertEquals(guestbookName, greeting.getKey().getParent().getName());
     assertEquals(testContent, greeting.getProperty("content"));
-    assertEquals(currentUser, greeting.getProperty("user"));
+    assertEquals(currentUser.getEmail(), greeting.getProperty("author_email"));
 
     Date date = (Date) greeting.getProperty("date");
     assertTrue("The date in the entity [" + date + "] is prior to the request being performed",

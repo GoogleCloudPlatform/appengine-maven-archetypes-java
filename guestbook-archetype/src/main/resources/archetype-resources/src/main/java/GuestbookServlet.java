@@ -2,7 +2,7 @@
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
 /**
- * Copyright 2012 Google Inc. All Rights Reserved.
+ * Copyright 2014-2015 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+//[START all]
 package ${package};
 
 import com.google.appengine.api.users.User;
@@ -24,6 +24,7 @@ import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 
 import java.io.IOException;
+import java.util.Properties;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,15 +34,23 @@ public class GuestbookServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws IOException {
-
-    UserService userService = UserServiceFactory.getUserService();
-    User currentUser = userService.getCurrentUser();
-
-    if (currentUser != null) {
+    if (req.getParameter("testing") != null) {
       resp.setContentType("text/plain");
-      resp.getWriter().println("Hello, " + currentUser.getNickname());
+      resp.getWriter().println("Hello, this is a testing servlet. \n\n");
+      Properties p = System.getProperties();
+      p.list(resp.getWriter());
+
     } else {
-      resp.sendRedirect(userService.createLoginURL(req.getRequestURI()));
+      UserService userService = UserServiceFactory.getUserService();
+      User currentUser = userService.getCurrentUser();
+
+      if (currentUser != null) {
+        resp.setContentType("text/plain");
+        resp.getWriter().println("Hello, " + currentUser.getNickname());
+      } else {
+        resp.sendRedirect(userService.createLoginURL(req.getRequestURI()));
+      }
     }
   }
 }
+//[END all]

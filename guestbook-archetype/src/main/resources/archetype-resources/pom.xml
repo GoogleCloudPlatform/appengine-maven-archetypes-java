@@ -1,3 +1,4 @@
+#set( $symbol_dollar = '$' )
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -9,8 +10,15 @@
     <artifactId>${artifactId}</artifactId>
 
     <properties>
-        <appengine.app.version>1</appengine.app.version>
+        <app.id>${application-id}</app.id>
+        <app.version>1</app.version>
+        <appengine.version>${appengine-version}</appengine.version>
+
+        <objectify.version>5.1.5</objectify.version>
+        <guava.version>18.0</guava.version>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     </properties>
 
     <prerequisites>
@@ -22,7 +30,7 @@
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>${appengine-version}</version>
+            <version>${symbol_dollar}{appengine.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -36,29 +44,42 @@
             <version>1.2</version>
         </dependency>
 
+<!-- [START Objectify_Dependencies] -->
+        <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>${symbol_dollar}{guava.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>com.googlecode.objectify</groupId>
+          <artifactId>objectify</artifactId>
+          <version>${objectify.version}</version>
+        </dependency>
+<!-- [END Objectify_Dependencies] -->
+
         <!-- Test Dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12-beta-1</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
-            <version>1.9.5</version>
+            <version>2.0.2-beta</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-testing</artifactId>
-            <version>${appengine-version}</version>
+            <version>${symbol_dollar}{appengine.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-stubs</artifactId>
-            <version>${appengine-version}</version>
+            <version>${symbol_dollar}{appengine.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -83,7 +104,7 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <version>3.1</version>
+                <version>3.2</version>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>1.7</source>
@@ -94,7 +115,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.4</version>
+                <version>2.6</version>
                 <configuration>
                     <archiveClasses>true</archiveClasses>
                     <webResources>
@@ -111,7 +132,7 @@
             <plugin>
                 <groupId>com.google.appengine</groupId>
                 <artifactId>appengine-maven-plugin</artifactId>
-                <version>${appengine-version}</version>
+                <version>${symbol_dollar}{appengine.version}</version>
                 <configuration>
                     <enableJarClasses>false</enableJarClasses>
                     <!-- Comment in the below snippet to bind to all IPs instead of just localhost -->
@@ -126,5 +147,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
