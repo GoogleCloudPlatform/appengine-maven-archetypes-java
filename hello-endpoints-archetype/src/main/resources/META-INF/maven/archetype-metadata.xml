@@ -41,14 +41,13 @@
       <directory></directory>
       <includes>
         <include>LICENSE</include>
-        <include>CONTRIB.md</include>
         <include>.gitignore</include>
       </includes>
     </fileSet>
   </fileSets>
   <requiredProperties>
     <requiredProperty key="appengine-version">
-      <defaultValue>1.9.4</defaultValue>
+      <defaultValue>1.9.20</defaultValue>
     </requiredProperty>
     <requiredProperty key="application-id">
       <defaultValue>your-app-id</defaultValue>
