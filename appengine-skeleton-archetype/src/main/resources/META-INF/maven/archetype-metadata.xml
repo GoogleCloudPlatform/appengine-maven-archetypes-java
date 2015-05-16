@@ -47,5 +47,8 @@
     <requiredProperty key="application-id">
       <defaultValue>your-app-id</defaultValue>
     </requiredProperty>
+    <requiredProperty key="gcloud-version">
+      <defaultValue>0.9.58.v20150505</defaultValue>
+    </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>
