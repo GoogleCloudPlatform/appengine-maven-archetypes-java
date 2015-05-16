@@ -13,6 +13,11 @@
       <directory>src/main/webapp</directory>
       <includes>
         <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>src/main/webapp</directory>
+      <includes>
         <include>**/*.properties</include>
       </includes>
     </fileSet>
