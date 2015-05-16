@@ -4,7 +4,7 @@
 
   <groupId>com.google.appengine.archetypes</groupId>
   <artifactId>guestbook-archetype</artifactId>
-  <version>2.0.0-1.9.10</version>
+  <version>3.0.0-1.9.20</version>
   <packaging>maven-archetype</packaging>
 
   <name>guestbook-archetype</name>
@@ -20,6 +20,12 @@
     <developer>
       <name>Takashi Matsuo</name>
       <email>tmatsuo@google.com</email>
+      <organization>Google</organization>
+      <organizationUrl>http://www.google.com</organizationUrl>
+    </developer>
+    <developer>
+      <name>Les Vogel</name>
+      <email>lesv@google.com</email>
       <organization>Google</organization>
       <organizationUrl>http://www.google.com</organizationUrl>
     </developer>

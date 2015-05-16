@@ -1,3 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -9,7 +12,10 @@
     <artifactId>${artifactId}</artifactId>
 
     <properties>
-        <appengine.app.version>1</appengine.app.version>
+        <app.id>${application-id}</app.id>
+        <app.version>1</app.version>
+        <appengine.version>${appengine-version}</appengine.version>
+        <gcloud.plugin.version>${gcloud-version}</gcloud.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -22,7 +28,7 @@
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>${appengine-version}</version>
+            <version>${appengine.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -40,13 +46,13 @@
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-testing</artifactId>
-            <version>${appengine-version}</version>
+            <version>${appengine.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-stubs</artifactId>
-            <version>${appengine-version}</version>
+            <version>${appengine.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -98,7 +104,7 @@
             <plugin>
                 <groupId>com.google.appengine</groupId>
                 <artifactId>appengine-maven-plugin</artifactId>
-                <version>${appengine-version}</version>
+                <version>${appengine.version}</version>
                 <configuration>
                     <enableJarClasses>false</enableJarClasses>
                     <!-- Comment in the below snippet to bind to all IPs instead of just localhost -->
@@ -110,6 +116,14 @@
                       <jvmFlag>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n</jvmFlag>
                     </jvmFlags -->
                 </configuration>
+            </plugin>
+            <plugin>
+              <groupId>com.google.appengine</groupId>
+              <artifactId>gcloud-maven-plugin</artifactId>
+              <version>${gcloud.plugin.version}</version>
+              <configuration>
+                <set_default>true</set_default>
+              </configuration>
             </plugin>
         </plugins>
     </build>

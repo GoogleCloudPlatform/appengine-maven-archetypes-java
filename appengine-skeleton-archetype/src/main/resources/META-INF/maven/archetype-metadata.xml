@@ -13,6 +13,11 @@
       <directory>src/main/webapp</directory>
       <includes>
         <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>src/main/webapp</directory>
+      <includes>
         <include>**/*.properties</include>
       </includes>
     </fileSet>
@@ -22,7 +27,7 @@
         <include>**/*.launch</include>
       </includes>
     </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
+    <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
         <include>nbactions.xml</include>
@@ -37,10 +42,13 @@
   </fileSets>
   <requiredProperties>
     <requiredProperty key="appengine-version">
-      <defaultValue>1.9.10</defaultValue>
+      <defaultValue>1.9.20</defaultValue>
     </requiredProperty>
     <requiredProperty key="application-id">
       <defaultValue>your-app-id</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="gcloud-version">
+      <defaultValue>0.9.58.v20150505</defaultValue>
     </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>
