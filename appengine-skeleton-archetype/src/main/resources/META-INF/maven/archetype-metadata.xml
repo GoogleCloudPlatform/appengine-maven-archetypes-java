@@ -31,11 +31,6 @@
       <directory></directory>
       <includes>
         <include>nbactions.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory></directory>
-      <includes>
         <include>README.md</include>
       </includes>
     </fileSet>

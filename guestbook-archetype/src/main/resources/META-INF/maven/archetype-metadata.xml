@@ -38,14 +38,9 @@
     <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>nbactions.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory></directory>
-      <includes>
         <include>LICENSE</include>
         <include>README.md</include>
+        <include>nbactions.xml</include>
       </includes>
     </fileSet>
   </fileSets>

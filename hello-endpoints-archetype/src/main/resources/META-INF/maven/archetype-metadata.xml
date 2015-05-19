@@ -14,7 +14,6 @@
       <includes>
         <include>**/*.xml</include>
         <include>**/*.html</include>
-        <include>**/*.properties</include>
         <include>**/*.js</include>
       </includes>
     </fileSet>
@@ -22,6 +21,7 @@
       <directory>src/main/webapp</directory>
       <includes>
         <include>**/*.css</include>
+        <include>**/*.properties</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
@@ -30,18 +30,12 @@
         <include>**/*.launch</include>
       </includes>
     </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
+    <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
         <include>nbactions.xml</include>
         <include>README.md</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory></directory>
-      <includes>
         <include>LICENSE</include>
-        <include>.gitignore</include>
       </includes>
     </fileSet>
   </fileSets>
@@ -60,6 +54,9 @@
     </requiredProperty>
     <requiredProperty key="ios-client-id">
       <defaultValue>replace this with your iOS client ID</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="gcloud-version">
+      <defaultValue>0.9.58.v20150505</defaultValue>
     </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>

@@ -156,7 +156,6 @@
                 <set_default>true</set_default>
               </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>
