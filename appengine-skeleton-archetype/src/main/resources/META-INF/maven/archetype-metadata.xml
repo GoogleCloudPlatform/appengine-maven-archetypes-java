@@ -37,7 +37,7 @@
   </fileSets>
   <requiredProperties>
     <requiredProperty key="appengine-version">
-      <defaultValue>1.9.20</defaultValue>
+      <defaultValue>1.9.21</defaultValue>
     </requiredProperty>
     <requiredProperty key="application-id">
       <defaultValue>your-app-id</defaultValue>
