@@ -17,6 +17,7 @@
         <appengine.version>${appengine-version}</appengine.version>
         <gcloud.plugin.version>${gcloud-version}</gcloud.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     </properties>
 
     <prerequisites>
