@@ -109,9 +109,17 @@
                 <configuration>
                     <webXml>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF/web.xml</webXml>
                     <webResources>
+                        <!-- in order to interpolate app name and version from pom into appengine-web.xml -->
+                        <resource>
+                            <directory>${basedir}/src/main/webapp/WEB-INF</directory>
+                            <filtering>true</filtering>
+                            <targetPath>WEB-INF</targetPath>
+                        </resource>
                         <resource>
                             <!-- this is relative to the pom.xml directory -->
                             <directory>${project.build.directory}/generated-sources/appengine-endpoints</directory>
+                            <!-- filtering is needed to interpolate app name from pom into the discovery files -->
+                            <filtering>true</filtering>
                             <!-- the list has a default value of ** -->
                             <includes>
                                 <include>WEB-INF/*.discovery</include>
