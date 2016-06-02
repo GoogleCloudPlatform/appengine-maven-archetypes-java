@@ -9,7 +9,7 @@
          version="2.5">
   <servlet>
     <servlet-name>HelloAppEngine</servlet-name>
-    <servlet-class>${Package}HelloAppEngine</servlet-class>
+    <servlet-class>${package}.HelloAppEngine</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>HelloAppEngine</servlet-name>
