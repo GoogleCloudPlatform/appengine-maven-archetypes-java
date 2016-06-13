@@ -39,7 +39,6 @@ import java.io.StringWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@SuppressWarnings("deprecation")
 public class GuestbookServletTest {
 
   private GuestbookServlet guestbookServlet;
