@@ -38,7 +38,7 @@ import java.util.Date;
  * your data from the start, you'll have to go back and index it later.
  *
  * NOTE - all the properties are PUBLIC to keep this simple; otherwise,
- * Jackson wants us to write a BeanSerializaer for cloud endpoints.
+ * Jackson wants us to write a BeanSerializer for cloud endpoints.
  **/
 @Entity
 public class Greeting {
