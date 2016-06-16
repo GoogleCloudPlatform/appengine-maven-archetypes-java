@@ -17,11 +17,15 @@
         <appengine.version>${appengine-version}</appengine.version>
         <gcloud.plugin.version>${gcloud-version}</gcloud.plugin.version>
 
-        <objectify.version>5.1.5</objectify.version>
+        <objectify.version>5.1.13</objectify.version>
         <guava.version>18.0</guava.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
         <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+        <archiveClasses>true</archiveClasses>
     </properties>
 
     <prerequisites>
@@ -104,15 +108,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <version>3.2</version>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
             </plugin>
 
             <plugin>
