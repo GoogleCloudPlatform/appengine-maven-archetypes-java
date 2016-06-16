@@ -43,13 +43,13 @@
   </fileSets>
   <requiredProperties>
     <requiredProperty key="appengine-version">
-      <defaultValue>1.9.38</defaultValue>
+      <defaultValue>${appengine.sdk.version}</defaultValue>
     </requiredProperty>
     <requiredProperty key="application-id">
       <defaultValue>your-app-id</defaultValue>
     </requiredProperty>
     <requiredProperty key="gcloud-version">
-      <defaultValue>2.0.9.74.v20150814</defaultValue>
+      <defaultValue>${gcloud.plugin.version}</defaultValue>
     </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>
