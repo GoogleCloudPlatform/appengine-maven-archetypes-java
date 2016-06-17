@@ -102,10 +102,14 @@
                 <artifactId>app-maven-plugin</artifactId>
                 <version>0.1.0-SNAPSHOT</version>
                 <configuration>
-                    <enableJarClasses>false</enableJarClasses>
-                    <version>${app.version}</version>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    <pluginRepositories>
+      <pluginRepository>
+        <id>sonatype-nexus-snapshots</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+       </pluginRepository>
+    </pluginRepositories>
 </project>
