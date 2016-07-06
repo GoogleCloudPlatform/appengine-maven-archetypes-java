@@ -17,11 +17,11 @@ limitations under the License.
 <project>
   <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.google.appengine.archetypes</groupId>
-		<artifactId>archetypes</artifactId>
-		<version>1.0.0</version>
-	</parent>
+  <parent>
+    <groupId>com.google.appengine.archetypes</groupId>
+    <artifactId>archetypes</artifactId>
+    <version>1.0.0</version>
+  </parent>
 
   <groupId>com.google.appengine.archetypes</groupId>
   <artifactId>gcp-skeleton-archetype</artifactId>

@@ -1,4 +1,5 @@
 gcp-skeleton
 =============================
 
-This is a generated application from the gcp-skeleton archetype.
+This is a generated App Engine Standard Java
+application from the gcp-skeleton archetype.
