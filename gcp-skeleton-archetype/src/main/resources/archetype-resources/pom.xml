@@ -113,7 +113,7 @@ limitations under the License.
       </plugin>
 
       <plugin>
-        <groupId>com.google.appengine</groupId>
+        <groupId>com.google.cloud.tools</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
         <version>0.1.0-beta</version>
         <configuration>
