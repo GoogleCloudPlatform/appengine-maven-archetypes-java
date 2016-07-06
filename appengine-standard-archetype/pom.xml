@@ -24,11 +24,11 @@ limitations under the License.
   </parent>
 
   <groupId>com.google.appengine.archetypes</groupId>
-  <artifactId>gcp-skeleton-archetype</artifactId>
+  <artifactId>appengine-standard-archetype</artifactId>
   <version>2.1.0-${appengine.sdk.version}</version>
   <packaging>maven-archetype</packaging>
 
-  <name>gcp-skeleton-archetype</name>
-  <description>A skeleton application with Google App Engine</description>
+  <name>appengine-standard-archetype</name>
+  <description>A basic Java application with Google App Engine Standard</description>
 
 </project>
