@@ -37,6 +37,7 @@ limitations under the License.
 
   <modules>
     <module>appengine-skeleton-archetype</module>
+    <module>appengine-standard-archetype</module>
     <module>endpoints-skeleton-archetype</module>
     <module>guestbook-archetype</module>
     <module>hello-endpoints-archetype</module>
