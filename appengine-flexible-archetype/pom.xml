@@ -24,11 +24,11 @@ limitations under the License.
   </parent>
 
   <groupId>com.google.appengine.archetypes</groupId>
-  <artifactId>appengine-standard-archetype</artifactId>
+  <artifactId>appengine-flexible-archetype</artifactId>
   <version>0.1.0</version>
   <packaging>maven-archetype</packaging>
 
-  <name>appengine-standard-archetype</name>
-  <description>A basic Java application with Google App Engine Standard</description>
+  <name>appengine-flexible-archetype</name>
+  <description>A basic Java application with Google App Engine Flexible.</description>
 
 </project>
