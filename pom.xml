@@ -20,7 +20,7 @@ limitations under the License.
   <groupId>com.google.appengine.archetypes</groupId>
   <artifactId>archetypes</artifactId>
   <version>1.0.0</version>
-  
+
   <packaging>pom</packaging>
 
   <url>https://developers.google.com/appengine/</url>
@@ -36,21 +36,25 @@ limitations under the License.
   </prerequisites>
 
   <modules>
-    <module>appengine-skeleton-archetype</module>
     <module>appengine-standard-archetype</module>
-    <module>endpoints-skeleton-archetype</module>
+    <module>appengine-flexible-archetype</module>
+
+    <module>appengine-skeleton-archetype</module>
+
     <module>guestbook-archetype</module>
+
+    <module>endpoints-skeleton-archetype</module>
     <module>hello-endpoints-archetype</module>
   </modules>
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    
-    <appengine.sdk.version>1.9.38</appengine.sdk.version>
-    <gcloud.plugin.version>2.0.9.111.v20160527</gcloud.plugin.version>
+
+    <appengine.sdk.version>1.9.42</appengine.sdk.version>
+    <gcloud.plugin.version>2.0.9.121.v20160815</gcloud.plugin.version>
   </properties>
 
   <build>

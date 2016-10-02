@@ -28,13 +28,15 @@ limitations under the License.
 
   <properties>
     <appengine.version>${appengine-version}</appengine.version>
-    <appengine.maven.plugin.version>${appengine-plugin-version}</appengine.maven.plugin.version>
+    <appengine.maven.plugin.version>1.0.0</appengine.maven.plugin.version>
+    <jetty-maven-plugin-version>9.3.7.v20160115</jetty-maven-plugin-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <archiveClasses>true</archiveClasses>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
   </properties>
 
   <prerequisites>
@@ -50,8 +52,9 @@ limitations under the License.
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <type>jar</type>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -136,6 +139,12 @@ limitations under the License.
             </resource>
           </webResources>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>${jetty-maven-plugin-version}</version>
       </plugin>
 
       <plugin>

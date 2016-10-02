@@ -3,10 +3,8 @@
 #set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="utf-8"?>
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-    <application>${app.id}</application>
-    <version>${app.version}</version>
+    <application>not-needed</application> <!-- no longer be required (in a week or so) -->
     <threadsafe>true</threadsafe>
-    
     <system-properties>
         <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
     </system-properties>

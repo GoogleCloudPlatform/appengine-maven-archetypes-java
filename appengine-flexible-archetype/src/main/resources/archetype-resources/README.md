@@ -1,16 +1,14 @@
-appengine-standard-archetype
+appengine-flexible-archetype
 ============================
 
-This is a generated App Engine Standard Java application from the appengine-standard-archetype archetype.
+This is a generated App Engine Flexible Java application from the appengine-flexible-archetype archetype.
 
 ## Requirements
 
-* Java 7
+* [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * [Maven](https://maven.apache.org/download.cgi) (at least 3.3.9)
 * [Gradle](https://gradle.org/gradle-download/) (optional)
 * [Google Cloud SDK](https://cloud.google.com/sdk/) (aka gcloud)
-
-WARNING: Java 7 is REQUIRED when you use JSP's locally.
 
 Initialize the Google Cloud SDK using:
 
@@ -22,7 +20,7 @@ This skeleton is ready to run.
 
 ### Run Locally
 
-    mvn appengine:run
+    mvn jetty:run
 
 ### Deploy
 
@@ -36,11 +34,11 @@ This skeleton is ready to run.
 
 ### Run Locally
 
-    gradle appengineRun
+    gradle test jettyRun
 
 ### Deploy
 
-    gradle appengineDeploy
+    gradle test appengineDeploy
 
 ### Test Only
 
