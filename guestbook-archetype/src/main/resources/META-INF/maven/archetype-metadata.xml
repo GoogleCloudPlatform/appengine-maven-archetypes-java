@@ -51,8 +51,5 @@
     <requiredProperty key="application-id">
       <defaultValue>your-app-id</defaultValue>
     </requiredProperty>
-    <requiredProperty key="gcloud-version">
-      <defaultValue>${gcloud.plugin.version}</defaultValue>
-    </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>

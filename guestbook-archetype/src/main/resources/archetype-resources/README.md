@@ -1,21 +1,36 @@
 App Engine Java Guestbook
-Copyright (C) 2010-2012 Google Inc.
+=========================
 
-## Sample guestbook for use with App Engine Java.
+Sample guestbook for use with App Engine Java.
 
-Requires [Apache Maven](http://maven.apache.org) 3.1 or greater, and JDK 7+ in order to run.
+## Requirements
 
-To build, run
+* Java 7
+* [Maven](https://maven.apache.org/download.cgi) (at least 3.3.9)
+* [Google Cloud SDK](https://cloud.google.com/sdk/) (aka gcloud)
 
-    mvn package
+WARNING: Java 7 is REQUIRED when you use JSP's locally.
 
-Building will run the tests, but to explicitly run tests you can use the test target
+Initialize the Google Cloud SDK using:
+
+    gcloud init
+
+This skeleton is ready to run.
+
+## Maven
+
+### Run Locally
+
+    mvn appengine:run
+
+### Deploy
+
+    mvn appengine:deploy
+
+### Test Only
 
     mvn test
 
-To start the app, use the [App Engine Maven Plugin](http://code.google.com/p/appengine-maven-plugin/) that is already included in this demo.  Just run the command.
-
-    mvn appengine:devserver
 
 For further information, consult the [Java App Engine](https://developers.google.com/appengine/docs/java/overview) documentation.
 
