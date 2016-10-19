@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright 2016 Google Inc. All Rights Reserved.
+Copyright 2016 Google Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -54,12 +54,14 @@ limitations under the License.
       <version>2.5</version>
       <scope>provided</scope>
     </dependency>
+#if(${useJstl} == "true")    
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
-
+ #end
+ 
     <!-- Test Dependencies -->
     <dependency>
       <groupId>com.google.appengine</groupId>

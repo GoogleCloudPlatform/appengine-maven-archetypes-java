@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright 2016 Google Inc. All Rights Reserved.
+Copyright 2016 Google Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -48,6 +48,9 @@ limitations under the License.
   <requiredProperties>
     <requiredProperty key="appengine-version">
       <defaultValue>${appengine.sdk.version}</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="useJstl">
+      <defaultValue>true</defaultValue>
     </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>
