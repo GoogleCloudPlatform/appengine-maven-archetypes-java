@@ -52,5 +52,11 @@ limitations under the License.
     <requiredProperty key="useJstl">
       <defaultValue>true</defaultValue>
     </requiredProperty>
+    <requiredProperty key="useObjectify">
+      <defaultValue>false</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="useAppEngineApi">
+      <defaultValue>false</defaultValue>
+    </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>

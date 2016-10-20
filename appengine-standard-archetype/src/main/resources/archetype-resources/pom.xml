@@ -35,6 +35,8 @@ limitations under the License.
     <maven.compiler.target>1.7</maven.compiler.target>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <archiveClasses>true</archiveClasses>
+    <objectify.version>5.1.13</objectify.version>
+    <guava.version>18.0</guava.version>
   </properties>
 
   <prerequisites>
@@ -61,6 +63,20 @@ limitations under the License.
       <version>1.2</version>
     </dependency>
  #end
+ 
+ 
+#if(${useObjectify} == "true")    
+	<dependency>
+	  <groupId>com.google.guava</groupId>
+	  <artifactId>guava</artifactId>
+	  <version>${guava.version}</version>
+	</dependency>
+	<dependency>
+	  <groupId>com.googlecode.objectify</groupId>
+	  <artifactId>objectify</artifactId>
+	  <version>${objectify.version}</version>
+	</dependency>
+#end
  
     <!-- Test Dependencies -->
     <dependency>
