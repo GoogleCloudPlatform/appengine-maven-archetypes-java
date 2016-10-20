@@ -37,6 +37,8 @@ limitations under the License.
     <archiveClasses>true</archiveClasses>
     <objectify.version>5.1.13</objectify.version>
     <guava.version>18.0</guava.version>
+    <endpoints.framework.version>2.0.0-beta.7</endpoints.framework.version>
+    <endpoints.management.version>1.0.0-beta.7</endpoints.management.version>
   </properties>
 
   <prerequisites>
@@ -77,7 +79,7 @@ limitations under the License.
   </dependency>
 #end
 
-#if(${useEndpoints} == "true" || ${useAppEngineApi} == "true")    
+#if(${useEndpoints1} == "true" || ${useAppEngineApi} == "true")    
   <dependency>
     <groupId>com.google.appengine</groupId>
     <artifactId>appengine-api-1.0-sdk</artifactId>
@@ -85,11 +87,28 @@ limitations under the License.
   </dependency>
 #end
 
-#if(${useEndpoints} == "true")    
+#if(${useEndpoints1} == "true")    
   <dependency>
     <groupId>com.google.appengine</groupId>
     <artifactId>appengine-endpoints</artifactId>
     <version>${appengine.version}</version>
+  </dependency>
+#end
+#if(${useEndpoints2} == "true")    
+  <dependency>
+    <groupId>com.google.endpoints</groupId>
+    <artifactId>endpoints-framework</artifactId>
+    <version>${endpoints.framework.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.google.endpoints</groupId>
+    <artifactId>endpoints-management-control-appengine</artifactId>
+    <version>${endpoints.management.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.google.endpoints</groupId>
+    <artifactId>endpoints-framework-auth</artifactId>
+    <version>${endpoints.management.version}</version>
   </dependency>
 #end
  
