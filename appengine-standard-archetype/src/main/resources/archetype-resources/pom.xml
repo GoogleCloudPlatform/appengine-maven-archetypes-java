@@ -64,18 +64,33 @@ limitations under the License.
     </dependency>
  #end
  
- 
 #if(${useObjectify} == "true")    
-	<dependency>
-	  <groupId>com.google.guava</groupId>
-	  <artifactId>guava</artifactId>
-	  <version>${guava.version}</version>
-	</dependency>
-	<dependency>
-	  <groupId>com.googlecode.objectify</groupId>
-	  <artifactId>objectify</artifactId>
-	  <version>${objectify.version}</version>
-	</dependency>
+  <dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>${guava.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.googlecode.objectify</groupId>
+    <artifactId>objectify</artifactId>
+    <version>${objectify.version}</version>
+  </dependency>
+#end
+
+#if(${useEndpoints} == "true" || ${useAppEngineApi} == "true")    
+  <dependency>
+    <groupId>com.google.appengine</groupId>
+    <artifactId>appengine-api-1.0-sdk</artifactId>
+    <version>${appengine.version}</version>
+  </dependency>
+#end
+
+#if(${useEndpoints} == "true")    
+  <dependency>
+    <groupId>com.google.appengine</groupId>
+    <artifactId>appengine-endpoints</artifactId>
+    <version>${appengine.version}</version>
+  </dependency>
 #end
  
     <!-- Test Dependencies -->

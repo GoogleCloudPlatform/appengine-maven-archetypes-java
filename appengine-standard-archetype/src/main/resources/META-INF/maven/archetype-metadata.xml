@@ -58,5 +58,8 @@ limitations under the License.
     <requiredProperty key="useAppEngineApi">
       <defaultValue>false</defaultValue>
     </requiredProperty>
+    <requiredProperty key="useEndpoints">
+      <defaultValue>false</defaultValue>
+    </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>
