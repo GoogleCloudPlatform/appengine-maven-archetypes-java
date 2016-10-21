@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright 2016 Google Inc. All Rights Reserved.
+Copyright 2016 Google Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -35,6 +35,10 @@ limitations under the License.
     <maven.compiler.target>1.7</maven.compiler.target>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <archiveClasses>true</archiveClasses>
+    <objectify.version>5.1.13</objectify.version>
+    <guava.version>18.0</guava.version>
+    <endpoints.framework.version>2.0.0-beta.7</endpoints.framework.version>
+    <endpoints.management.version>1.0.0-beta.7</endpoints.management.version>
   </properties>
 
   <prerequisites>
@@ -54,12 +58,60 @@ limitations under the License.
       <version>2.5</version>
       <scope>provided</scope>
     </dependency>
+#if(${useJstl} == "true")    
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
+ #end
+ 
+#if(${useObjectify} == "true")    
+  <dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>${guava.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.googlecode.objectify</groupId>
+    <artifactId>objectify</artifactId>
+    <version>${objectify.version}</version>
+  </dependency>
+#end
 
+#if(${useEndpoints1} == "true" || ${useAppEngineApi} == "true")    
+  <dependency>
+    <groupId>com.google.appengine</groupId>
+    <artifactId>appengine-api-1.0-sdk</artifactId>
+    <version>${appengine.version}</version>
+  </dependency>
+#end
+
+#if(${useEndpoints1} == "true")    
+  <dependency>
+    <groupId>com.google.appengine</groupId>
+    <artifactId>appengine-endpoints</artifactId>
+    <version>${appengine.version}</version>
+  </dependency>
+#end
+#if(${useEndpoints2} == "true")    
+  <dependency>
+    <groupId>com.google.endpoints</groupId>
+    <artifactId>endpoints-framework</artifactId>
+    <version>${endpoints.framework.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.google.endpoints</groupId>
+    <artifactId>endpoints-management-control-appengine</artifactId>
+    <version>${endpoints.management.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.google.endpoints</groupId>
+    <artifactId>endpoints-framework-auth</artifactId>
+    <version>${endpoints.management.version}</version>
+  </dependency>
+#end
+ 
     <!-- Test Dependencies -->
     <dependency>
       <groupId>com.google.appengine</groupId>
