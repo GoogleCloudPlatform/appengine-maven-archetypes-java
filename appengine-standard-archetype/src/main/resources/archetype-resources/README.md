@@ -10,8 +10,6 @@ This is a generated App Engine Standard Java application from the appengine-stan
 * [Gradle](https://gradle.org/gradle-download/) (optional)
 * [Google Cloud SDK](https://cloud.google.com/sdk/) (aka gcloud)
 
-WARNING: Java 7 is REQUIRED when you use JSP's locally.
-
 Initialize the Google Cloud SDK using:
 
     gcloud init
