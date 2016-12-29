@@ -35,7 +35,6 @@
       <includes>
         <include>LICENSE</include>
         <include>README.md</include>
-        <include>nbactions.xml</include>
       </includes>
     </fileSet>
   </fileSets>
