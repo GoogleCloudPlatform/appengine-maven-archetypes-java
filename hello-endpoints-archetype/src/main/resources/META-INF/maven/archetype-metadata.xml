@@ -55,8 +55,5 @@
     <requiredProperty key="ios-client-id">
       <defaultValue>replace this with your iOS client ID</defaultValue>
     </requiredProperty>
-    <requiredProperty key="gcloud-version">
-      <defaultValue>${gcloud.plugin.version}</defaultValue>
-    </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>
