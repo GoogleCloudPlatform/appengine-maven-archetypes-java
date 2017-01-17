@@ -14,43 +14,70 @@ A "hello world" application for Google Cloud Endpoints in Java.
 - [Google App Engine Maven plugin][4]
 
 ## Setup Instructions
+1. Update the value of `application` in `appengine-web.xml` to the app ID you
+   have registered in the App Engine admin console and would like to use to host
+   your instance of this sample.
 
-1. Update the value of `application` in `appengine-web.xml` to the app
-   ID you have registered in the App Engine admin console and would
-   like to use to host your instance of this sample.
+1. [Optional]: These sub steps are not required but will enable the "Authenticated
+Greeting" functionality.
 
-1. Optional step: These sub steps are not required but you need to do
-   this if you want to use auth protected API methods.
+   1. Update the values in [src/main/java/${packageInPathFormat}/Constants.java](src/main/java/${packageInPathFormat}/Constants.java) to reflect the web client ID you have registered in the
+[Credentials on Developers Console for OAuth 2.0 client IDs][6].
 
-    1. Update the values in `src/main/java/${packageInPathFormat}/Constants.java`
-       to reflect the respective client IDs you have registered in the
-       [APIs Console][6].
+    1. Update the value of `google.devrel.samples.helloendpoints.CLIENT_ID` in
+[src/main/webapp/js/base.js](src/main/webapp/js/base.js) to reflect the web client ID you have registered in the
+[Credentials on Developers Console for OAuth 2.0 client IDs][6].
 
-    1. Update the value of `google.devrel.samples.helloendpoints.CLIENT_ID`
-       in `src/main/webapp/base.js` to reflect the web client ID you have
-       registered in the [APIs Console][4].
+1. [Optional]: Use Endpoints Frameworks v1.0.
 
-1. Run the application with `mvn appengine:devserver`, and ensure it's
-   running by visiting your local server's address (by default
-   [localhost:8080][5].)
+    1. Uncomment commented Endpoints Frameworks v1.0 sections and comment
+        Endpoints Frameworks v2.0 sections in the following files.
 
-1. Get the client library with
+      ```
+        pom.xml
+        build.gradle
+        src/main/webapp/WEB-INF/web.xml
+      ```
 
-   $ mvn appengine:endpoints_get_client_lib
+###  Maven
 
-   It will generate a jar file named something like
-   `helloworld-v1-1.18.0-rc-SNAPSHOT.jar` under the
-   `target/endpoints-client-libs/<api-name>/target` directory of your
-   project, as well as install the artifact into your local maven
-   repository.
+1. Build a fresh binary with
+
+    `mvn clean compile`
+
+1. Run the application locally at [localhost:8080][5] with
+
+    `mvn appengine:run`
+
+1. Generate the client library in a zip file named `helloworld-v1-java.zip` with
+
+    `mvn endpoints-framework:clientLibs`
 
 1. Deploy your application to Google App Engine with
 
-   $ mvn appengine:update
+    `mvn appengine:deploy`
+
+### Gradle
+
+1. Build a fresh binary with
+
+    `gradle clean compileJava`
+
+1. Run the application locally at [localhost:8080][5] with
+
+    `gradle appengineRun`
+
+1. Generate the client library in a zip file named `helloworld-v1-java.zip` with
+
+    `gradle endpointsClientLibs`
+
+1. Deploy your application to Google App Engine with
+
+    `gradle appengineDeploy`
 
 [1]: https://developers.google.com/appengine
 [2]: http://java.com/en/
 [3]: https://developers.google.com/appengine/docs/java/endpoints/
 [4]: https://developers.google.com/appengine/docs/java/tools/maven
 [5]: https://localhost:8080/
-[6]: https://console.developers.google.com/
+[6]: https://console.developers.google.com/project/_/apiui/credential

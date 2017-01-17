@@ -17,18 +17,18 @@ limitations under the License.
 <project>
   <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.google.appengine.archetypes</groupId>
-		<artifactId>archetypes</artifactId>
-		<version>1.0.0</version>
-	</parent>
+  <parent>
+      <groupId>com.google.appengine.archetypes</groupId>
+      <artifactId>archetypes</artifactId>
+      <version>1.0.0</version>
+  </parent>
 
   <groupId>com.google.appengine.archetypes</groupId>
   <artifactId>hello-endpoints-archetype</artifactId>
-  <version>1.1.5-${appengine.sdk.version}</version>
+  <version>2.0.0-0</version>
   <packaging>maven-archetype</packaging>
 
   <name>hello-endpoints-archetype</name>
-  <description>A simple starter application using Cloud Endpoints with Google App Engine Java</description>
-  <url>https://github.com/GoogleCloudPlatform/appengine-endpoints-helloendpoints-java-maven</url>
+  <description>A simple starter application using Cloud Endpoints with Google App Engine Standard</description>
+  <url>https://cloud.google.com/appengine/docs/java/endpoints/</url>
 </project>

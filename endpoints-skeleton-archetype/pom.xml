@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright 2016 Google Inc. All Rights Reserved.
+Copyright 2017 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -17,18 +17,18 @@ limitations under the License.
 <project>
   <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.google.appengine.archetypes</groupId>
-		<artifactId>archetypes</artifactId>
-		<version>1.0.0</version>
-	</parent>
+  <parent>
+      <groupId>com.google.appengine.archetypes</groupId>
+      <artifactId>archetypes</artifactId>
+      <version>1.0.0</version>
+  </parent>
 
   <groupId>com.google.appengine.archetypes</groupId>
   <artifactId>endpoints-skeleton-archetype</artifactId>
-  <version>1.1.5-${appengine.sdk.version}</version>
+  <version>2.0.0-0</version>
   <packaging>maven-archetype</packaging>
 
   <name>endpoints-skeleton-archetype</name>
-  <description>A skeleton project using Cloud Endpoints with Google App Engine Java</description>
-  <url>https://developers.google.com/appengine/docs/java/endpoints/</url>
+  <description>A skeleton project using Cloud Endpoints with Google App Engine Standard</description>
+  <url>https://cloud.google.com/appengine/docs/java/endpoints/</url>
 </project>
