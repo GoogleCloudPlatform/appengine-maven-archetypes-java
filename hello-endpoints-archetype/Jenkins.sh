@@ -11,9 +11,19 @@ mvn clean appengine:deploy \
     -Dapp.deploy.version="${GOOGLE_VERSION_ID}" \
     -DskipTests=true
 
-# End-2-End test the deployment
+# End-2-End tests
+bash Jenkins.sh
+
+# Clean and redploy using Gradle
+mvn clean
+
+# Deploy
+gradle appengineDeploy
+
+# End-2-End tests
 bash Jenkins.sh
 
 # Pop from generated archetype
 popd
+
 
