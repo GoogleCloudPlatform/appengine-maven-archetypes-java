@@ -20,6 +20,13 @@ bash Jenkins.sh
 # Clean and redploy using Gradle
 mvn clean
 
+# Delete Version $GOOGLE_VERSION_ID
+gcloud -q app services set-traffic default --splits 1=1
+gcloud -q app versions delete ${GOOGLE_VERSION_ID}
+
+# Set deploy version
+sed -i'.bak' -e "s/deploy {/deploy {\n version='${GOOGLE_VERSION_ID}'/g" build.gradle
+
 # Deploy
 gradle appengineDeploy
 
