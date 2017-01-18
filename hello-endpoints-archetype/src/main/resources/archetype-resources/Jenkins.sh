@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fail on non-zero return
-set -e
+set -xe
 
 # Jenkins Test Script
 # Test getGreeting Endpoint (hello world!)
