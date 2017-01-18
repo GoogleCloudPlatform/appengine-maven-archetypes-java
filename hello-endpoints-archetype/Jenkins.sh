@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Fail on non-zero return and print
+set -xe
+
 # Build Test Archetype
 mvn verify
 
