@@ -14,10 +14,6 @@ A "hello world" application for Google Cloud Endpoints in Java.
 - [Google App Engine Maven plugin][4]
 
 ## Setup Instructions
-1. Update the value of `application` in `appengine-web.xml` to the app ID you
-   have registered in the App Engine admin console and would like to use to host
-   your instance of this sample.
-
 1. [Optional]: These sub steps are not required but will enable the "Authenticated
 Greeting" functionality.
 
@@ -30,8 +26,8 @@ Greeting" functionality.
 
 1. [Optional]: Use Endpoints Frameworks v1.0.
 
-    1. Uncomment commented Endpoints Frameworks v1.0 sections and comment
-        Endpoints Frameworks v2.0 sections in the following files.
+    * Uncomment commented Endpoints Frameworks v1.0 sections and comment
+      Endpoints Frameworks v2.0 sections in the following files.
 
       ```
         pom.xml

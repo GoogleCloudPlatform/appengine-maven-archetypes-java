@@ -18,13 +18,9 @@ A skeleton application for Google Cloud Endpoints in Java.
 
 ## Setup Instructions
 
-1. Update the value of `application` in `appengine-web.xml` to the app
-   ID you have registered in the App Engine admin console and would
-   like to use to host your instance of this sample.
-
 1. Add your API method to `src/main/java/${packageInPathFormat}/YourFirstAPI.java`.
 
-1. Optional step: These sub steps are not required but you need this
+1. [Optional]: These sub steps are not required but you need this
    if you want to have auth protected methods.
 
     1. Update the values in `src/main/java/${packageInPathFormat}/Constants.java`
@@ -37,8 +33,8 @@ A skeleton application for Google Cloud Endpoints in Java.
 
 1. [Optional]: Use Endpoints Frameworks v1.0.
 
-    1. Uncomment commented Endpoints Frameworks v1.0 sections and comment
-        Endpoints Frameworks v2.0 sections in the following files.
+    * Uncomment commented Endpoints Frameworks v1.0 sections and comment
+      Endpoints Frameworks v2.0 sections in the following files.
 
       ```
         pom.xml
