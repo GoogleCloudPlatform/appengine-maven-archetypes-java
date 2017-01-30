@@ -24,16 +24,9 @@
         <include>**/*.properties</include>
       </includes>
     </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>eclipse-launch-profiles</directory>
-      <includes>
-        <include>**/*.launch</include>
-      </includes>
-    </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>nbactions.xml</include>
         <include>README.md</include>
         <include>LICENSE</include>
         <include>build.gradle</include>
