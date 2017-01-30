@@ -1,22 +1,34 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-endpoints-skeleton
-==================
+# Skeleton Google Cloud Endpoints Frameworks for App Engine using a discovery document
 
-A skeleton application for Google Cloud Endpoints in Java.
+This generated sample provides a skeleton to get started with Cloud Endpoints
+Frameworks for App Engine using a discovery document. This sample contains comments
+of how to use the prior Endpoints Frameworks as well. For clarity, the prior Endpoints
+Frameworks and the new Endpoints Frameworks are denoted as Endpoints Frameworks v1.0
+and Endpoints Frameworks v2.0 respectively.
+
+Google Cloud Endpoints Frameworks v2.0 provides new functionality at a
+cost and uses an OpenAPI specification instead of the discovery document. The
+OpenAPI development process is explained [here][8] and a quickstart is provided
+[here][9].
 
 ## Products
-- [App Engine][1]
+- [Google App Engine Standard][1]
 
 ## Language
 - [Java][2]
 
 ## APIs
-- [Google Cloud Endpoints][3]
-- [Google App Engine Maven plugin][4]
+- [Google Cloud Endpoints Frameworks v2.0][8]
+- [Google Cloud Endpoints Frameworks v1.0][3]
 
-## Setup Instructions
+## Build and Deployment Plugins
+- [Google Cloud Endpoints Frameworks Maven Plugin][10]
+- [Google Cloud Endpoints Frameworks Gradle Plugin][11]
+
+## Setup
 
 1. Add your API method to `src/main/java/${packageInPathFormat}/YourFirstAPI.java`.
 
@@ -31,9 +43,9 @@ A skeleton application for Google Cloud Endpoints in Java.
        in the [APIs Console][4] to your client of choice (web, Android,
        iOS).
 
-1. [Optional]: Use Endpoints Frameworks v1.0.
+1. [Optional]: Use Cloud Endpoints Frameworks v1.0.
 
-    * Uncomment commented Endpoints Frameworks v1.0 sections and comment
+    - Uncomment Endpoints Frameworks v1.0 sections and comment
       Endpoints Frameworks v2.0 sections in the following files.
 
       ```
