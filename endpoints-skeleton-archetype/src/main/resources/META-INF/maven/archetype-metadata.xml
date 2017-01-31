@@ -34,9 +34,6 @@
     </fileSet>
   </fileSets>
   <requiredProperties>
-    <requiredProperty key="application-id">
-      <defaultValue>your-app-id</defaultValue>
-    </requiredProperty>
     <requiredProperty key="endpoints-fw">
       <defaultValue>2.0.0-beta.12</defaultValue>
     </requiredProperty>
