@@ -43,7 +43,7 @@ mvn clean appengine:deploy \
     -Dapp.deploy.version="${GOOGLE_VERSION_ID}"
 
 # End-2-End tests
-TestEndpoints $GOOGLE_PROJECT_ID $GOOGLE_VERSION_ID
+TestEndpoints "${GOOGLE_PROJECT_ID}" "${GOOGLE_VERSION_ID}"
 
 # Clean
 mvn clean
@@ -58,7 +58,7 @@ sed -i'.bak' -e "s/hello version-${GOOGLE_VERSION_ID}!/hello version-gradle-${GO
 gradle appengineDeploy
 
 # End-2-End tests
-TestEndpoints $GOOGLE_PROJECT_ID "gradle-${GOOGLE_VERSION_ID}"
+TestEndpoints "${GOOGLE_PROJECT_ID}" "gradle-${GOOGLE_VERSION_ID}"
 
 # Clean up
 gradle clean
