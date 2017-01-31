@@ -1,3 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 # Hello World Google Cloud Endpoints Frameworks for App Engine using a discovery document
 
 This generated sample provides an example of a [migration][7] from the prior version of
@@ -28,20 +31,29 @@ provided [here][9].
 - [Google Cloud Endpoints Frameworks Gradle Plugin][11]
 
 ## Setup
-1. [Optional]: These sub steps are not required but will enable the "Authenticated
-Greeting" functionality.
+1. [Optional]: User Authenticating with Google Accounts in Web Clients
 
-   1. Update the values in [Constants.java](src/main/java/${packageInPathFormat}/Constants.java) to reflect the web client ID you have registered in the
-[Credentials on Developers Console for OAuth 2.0 client IDs][6].
+    1. Update the `WEB_CLIENT_ID` in [Constants.java](src/main/java/${packageInPathFormat}/Constants.java)
+      to reflect the web client ID you have registered in the [Credentials on Developers Console for OAuth 2.0 client IDs][6].
 
-    1. Update the value of `google.devrel.samples.helloendpoints.CLIENT_ID` in
-[base.js](src/main/webapp/js/base.js) to reflect the web client ID you have registered in the
-[Credentials on Developers Console for OAuth 2.0 client IDs][6].
+    1. Update the value of `google.devrel.samples.helloendpoints.CLIENT_ID` in [base.js](src/main/webapp/js/base.js)
+       to reflect the web client ID you have registered in the [Credentials on Developers Console for OAuth 2.0 client IDs][6].
 
-1. [Optional]: Use Cloud Endpoints Frameworks v1.0.
+1. [Optional]: User Authenticating with Google Accounts in other Applications Types
 
-    - Uncomment Endpoints Frameworks v1.0 sections and comment
-      Endpoints Frameworks v2.0 sections in the following files.
+    - Inside [Constants.java](src/main/java/${packageInPathFormat}/Constants.java) you will find placeholders for Android
+      and iOS applications using Google Accounts client IDs registered in the
+      [Credentials on Developers Console for OAuth 2.0 client IDs][6].
+
+    - These client IDs are used when defining annotation for this sample API found in [Greetings.java](src/main/java/${packageInPathFormat}/Greetings.java).
+
+    - You can read more about different user authentication supported [here][12].
+
+1. [Optional]: Use Cloud Endpoints Frameworks v2.0 Maven and Gradle discovery and
+   client library generation plugins with Cloud Endpoints Frameworks v1.0.
+
+    - Uncomment `Endpoints Frameworks v1.0` sections and comment
+        `Endpoints Frameworks v2.0` sections in the following files.
 
       ```
         pom.xml
@@ -96,4 +108,4 @@ Greeting" functionality.
 [9]: https://cloud.google.com/endpoints/docs/frameworks/java/quickstart-frameworks-java
 [10]: https://github.com/GoogleCloudPlatform/endpoints-framework-maven-plugin
 [11]: https://github.com/GoogleCloudPlatform/endpoints-framework-gradle-plugin
-
+[12]: https://cloud.google.com/endpoints/docs/authenticating-users-frameworks
