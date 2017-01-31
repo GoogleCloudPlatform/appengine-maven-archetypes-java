@@ -32,17 +32,6 @@ provided [here][9].
 
 1. Add your API method to `src/main/java/${packageInPathFormat}/YourFirstAPI.java`.
 
-1. [Optional]: These sub steps are not required but you need this
-   if you want to have auth protected methods.
-
-    1. Update the values in `src/main/java/${packageInPathFormat}/Constants.java`
-       to reflect the respective client IDs you have registered in the
-       [APIs Console][6].
-
-    1. You also need to supply the web client ID you have registered
-       in the [APIs Console][4] to your client of choice (web, Android,
-       iOS).
-
 1. [Optional]: Use Cloud Endpoints Frameworks v1.0.
 
     - Uncomment Endpoints Frameworks v1.0 sections and comment
@@ -100,9 +89,15 @@ provided [here][9].
     `gradle appengineDeploy`
 
 
-[1]: https://developers.google.com/appengine
+[1]: https://cloud.google.com/appengine/docs/java/
 [2]: http://java.com/en/
-[3]: https://developers.google.com/appengine/docs/java/endpoints/
-[4]: https://developers.google.com/appengine/docs/java/tools/maven
-[5]: https://localhost:8080/_ah/api/explorer
-[6]: https://console.developers.google.com/
+[3]: https://cloud.google.com/appengine/docs/java/endpoints/
+[4]: https://cloud.google.com/appengine/docs/java/tools/maven
+[5]: https://localhost:8080/
+[6]: https://console.developers.google.com/project/_/apiui/credential
+[7]: https://cloud.google.com/appengine/docs/java/endpoints/migrating
+[8]: https://cloud.google.com/endpoints/docs/frameworks/java/about-cloud-endpoints-frameworks
+[9]: https://cloud.google.com/endpoints/docs/frameworks/java/quickstart-frameworks-java
+[10]: https://github.com/GoogleCloudPlatform/endpoints-framework-maven-plugin
+[11]: https://github.com/GoogleCloudPlatform/endpoints-framework-gradle-plugin
+[12]: https://cloud.google.com/endpoints/docs/authenticating-users-frameworks
