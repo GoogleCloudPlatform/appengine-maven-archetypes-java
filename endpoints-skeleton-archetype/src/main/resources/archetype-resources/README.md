@@ -43,6 +43,8 @@ provided [here][9].
         src/main/webapp/WEB-INF/web.xml
       ```
 
+## Build and Deployment
+
 ###  Maven
 
 1. Build a fresh binary with
