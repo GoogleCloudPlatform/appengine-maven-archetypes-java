@@ -1,56 +1,113 @@
-appengine-endpoints-helloendpoints-java-maven
-=============================================
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+# Hello World Google Cloud Endpoints Frameworks for App Engine using a discovery document
 
-A "hello world" application for Google Cloud Endpoints in Java.
+This generated sample provides an example of a [migration][7] from the prior version of
+[Google Cloud Endpoints Frameworks][3] to new [Google Cloud Endpoints Frameworks for App Engine][8]
+while still using a discovery document. This sample contains comments of how to 
+use the prior Endpoints Frameworks as well. For clarity, the prior Endpoints
+Frameworks and the new Endpoints Frameworks are denoted as Endpoints Frameworks v1.0
+and Endpoints Frameworks v2.0 respectively.
+
+Google Cloud Endpoints Frameworks v2.0 provides new functionality which may
+require payment and uses an OpenAPI specification instead of the discovery document.
+The OpenAPI development process is explained [here][8] and a quickstart is
+provided [here][9].
+
 
 ## Products
-- [App Engine][1]
+- [Google App Engine Standard][1]
 
 ## Language
 - [Java][2]
 
 ## APIs
-- [Google Cloud Endpoints][3]
-- [Google App Engine Maven plugin][4]
+- [Google Cloud Endpoints Frameworks v2.0][8]
+- [Google Cloud Endpoints Frameworks v1.0][3]
 
-## Setup Instructions
+## Build and Deployment Plugins
+- [Google Cloud Endpoints Frameworks Maven Plugin][10]
+- [Google Cloud Endpoints Frameworks Gradle Plugin][11]
 
-1. Update the value of `application` in `appengine-web.xml` to the app
-   ID you have registered in the App Engine admin console and would
-   like to use to host your instance of this sample.
+## Setup
+1. [Optional]: User Authenticating with Google Accounts in Web Clients
 
-1. Optional step: These sub steps are not required but you need to do
-   this if you want to use auth protected API methods.
+    1. Update the `WEB_CLIENT_ID` in [Constants.java](src/main/java/${packageInPathFormat}/Constants.java)
+      to reflect the web client ID you have registered in the [Credentials on Developers Console for OAuth 2.0 client IDs][6].
 
-    1. Update the values in `src/main/java/${packageInPathFormat}/Constants.java`
-       to reflect the respective client IDs you have registered in the
-       [APIs Console][6].
+    1. Update the value of `google.devrel.samples.helloendpoints.CLIENT_ID` in [base.js](src/main/webapp/js/base.js)
+       to reflect the web client ID you have registered in the [Credentials on Developers Console for OAuth 2.0 client IDs][6].
 
-    1. Update the value of `google.devrel.samples.helloendpoints.CLIENT_ID`
-       in `src/main/webapp/base.js` to reflect the web client ID you have
-       registered in the [APIs Console][4].
+1. [Optional]: User Authenticating with Google Accounts in other Applications Types
 
-1. Run the application with `mvn appengine:devserver`, and ensure it's
-   running by visiting your local server's address (by default
-   [localhost:8080][5].)
+    - Inside [Constants.java](src/main/java/${packageInPathFormat}/Constants.java) you will find placeholders for Android
+      and iOS applications using Google Accounts client IDs registered in the
+      [Credentials on Developers Console for OAuth 2.0 client IDs][6].
 
-1. Get the client library with
+    - These client IDs are used when defining annotation for this sample API found in [Greetings.java](src/main/java/${packageInPathFormat}/Greetings.java).
 
-   $ mvn appengine:endpoints_get_client_lib
+    - You can read more about different user authentication supported [here][12].
 
-   It will generate a jar file named something like
-   `helloworld-v1-1.18.0-rc-SNAPSHOT.jar` under the
-   `target/endpoints-client-libs/<api-name>/target` directory of your
-   project, as well as install the artifact into your local maven
-   repository.
+1. [Optional]: Use Cloud Endpoints Frameworks v2.0 Maven and Gradle discovery and
+   client library generation plugins with Cloud Endpoints Frameworks v1.0.
+
+    - Uncomment `Endpoints Frameworks v1.0` sections and comment
+        `Endpoints Frameworks v2.0` sections in the following files.
+
+      ```
+        pom.xml
+        build.gradle
+        src/main/webapp/WEB-INF/web.xml
+      ```
+
+## Build and Deployment
+
+###  Maven
+
+1. Build a fresh binary with
+
+    `mvn clean compile`
+
+1. Run the application locally at [localhost:8080][5] with
+
+    `mvn appengine:run`
+
+1. Generate the client library in a zip file named `helloworld-v1-java.zip` with
+
+    `mvn endpoints-framework:clientLibs`
 
 1. Deploy your application to Google App Engine with
 
-   $ mvn appengine:update
+    `mvn appengine:deploy`
 
-[1]: https://developers.google.com/appengine
+### Gradle
+
+1. Build a fresh binary with
+
+    `gradle clean compileJava`
+
+1. Run the application locally at [localhost:8080][5] with
+
+    `gradle appengineRun`
+
+1. Generate the client library in a zip file named `helloworld-v1-java.zip` with
+
+    `gradle endpointsClientLibs`
+
+1. Deploy your application to Google App Engine with
+
+    `gradle appengineDeploy`
+
+[1]: https://cloud.google.com/appengine/docs/java/
 [2]: http://java.com/en/
-[3]: https://developers.google.com/appengine/docs/java/endpoints/
-[4]: https://developers.google.com/appengine/docs/java/tools/maven
+[3]: https://cloud.google.com/appengine/docs/java/endpoints/
+[4]: https://cloud.google.com/appengine/docs/java/tools/maven
 [5]: https://localhost:8080/
-[6]: https://console.developers.google.com/
+[6]: https://console.developers.google.com/project/_/apiui/credential
+[7]: https://cloud.google.com/appengine/docs/java/endpoints/migrating
+[8]: https://cloud.google.com/endpoints/docs/frameworks/java/about-cloud-endpoints-frameworks
+[9]: https://cloud.google.com/endpoints/docs/frameworks/java/quickstart-frameworks-java
+[10]: https://github.com/GoogleCloudPlatform/endpoints-framework-maven-plugin
+[11]: https://github.com/GoogleCloudPlatform/endpoints-framework-gradle-plugin
+[12]: https://cloud.google.com/endpoints/docs/authenticating-users-frameworks
