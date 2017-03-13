@@ -1,18 +1,17 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-# Skeleton Google Cloud Endpoints Frameworks for App Engine using a discovery document
+# Skeleton Google Cloud Endpoints Frameworks for App Engine
 
 This generated sample provides a skeleton to get started with Cloud Endpoints
-Frameworks for App Engine using a discovery document. This sample contains comments
-of how to use the prior Endpoints Frameworks as well. For clarity, the prior Endpoints
-Frameworks and the new Endpoints Frameworks are denoted as Endpoints Frameworks v1.0
-and Endpoints Frameworks v2.0 respectively.
+Frameworks for App Engine. This sample contains comments of how to use the prior
+Endpoints Frameworks as well. For clarity, the prior Endpoints Frameworks and
+the new Endpoints Frameworks are denoted as Endpoints Frameworks v1.0 and
+Endpoints Frameworks v2.0 respectively.
 
 Google Cloud Endpoints Frameworks v2.0 provides new functionality which may
-require payment and uses an OpenAPI specification instead of the discovery document.
-The OpenAPI development process is explained [here][8] and a quickstart is
-provided [here][9].
+require payment and uses an OpenAPI specification. The OpenAPI development
+process is explained [here][8] and a quickstart is provided [here][9].
 
 ## Products
 - [Google App Engine Standard][1]
@@ -47,61 +46,55 @@ provided [here][9].
 
 ###  Maven
 
-1. Build a fresh binary with
+1. Build a fresh binary by using:
 
     `mvn clean compile`
 
-1. Run the application locally at [localhost:8080][5] with
+1. Run the application locally at [http://localhost:8080][5] by using:
 
     `mvn appengine:run`
 
-1. Explore local server's api explorer with
+1. Explore local server's API explorer by browsing to:
 
-  [localhost:8080/_ah/api/explorer][5]
+    [http://localhost:8080/_ah/api/explorer][13]
 
-1. Generate the client library in a zip file named `helloworld-v1-java.zip` with
+1. Generate the client library located at `target/client-libs/helloworld-v1-java.zip`
+   by using:
 
     `mvn endpoints-framework:clientLibs`
 
-1. Deploy your application to Google App Engine with
+1. Deploy your application to Google App Engine by using:
 
     `mvn appengine:deploy`
 
 ### Gradle
 
-1. Build a fresh binary with
+1. Build a fresh binary by using:
 
     `gradle clean compileJava`
 
-1. Run the application locally at [localhost:8080][5] with
+1. Run the application locally at [http://localhost:8080][5] by using:
 
     `gradle appengineRun`
 
-1. Explore local server's api explorer with
+1. Explore local server's API explorer by browsing to:
 
-  [localhost:8080/_ah/api/explorer][5]
+    [http://localhost:8080/_ah/api/explorer][13]
 
-
-1. Generate the client library in a zip file named `helloworld-v1-java.zip` with
+1. Generate the client library located at `build/endpointsClientLibs/helloworld-v1-java.zip`
+   by using:
 
     `gradle endpointsClientLibs`
 
-1. Deploy your application to Google App Engine with
+1. Deploy your application to Google App Engine by using:
 
     `gradle appengineDeploy`
-
-## Known issues
-
-There's a [bug][13] where `<version>1</version>` is required in the
-[appengine-web.xml](src/main/webapp/WEB-INF/appengine-web.xml) to run
-this sample locally. This will become optional in the near future.
-
 
 [1]: https://cloud.google.com/appengine/docs/java/
 [2]: http://java.com/en/
 [3]: https://cloud.google.com/appengine/docs/java/endpoints/
 [4]: https://cloud.google.com/appengine/docs/java/tools/maven
-[5]: https://localhost:8080/
+[5]: http://localhost:8080/
 [6]: https://console.developers.google.com/project/_/apiui/credential
 [7]: https://cloud.google.com/appengine/docs/java/endpoints/migrating
 [8]: https://cloud.google.com/endpoints/docs/frameworks/java/about-cloud-endpoints-frameworks
@@ -109,4 +102,4 @@ this sample locally. This will become optional in the near future.
 [10]: https://github.com/GoogleCloudPlatform/endpoints-framework-maven-plugin
 [11]: https://github.com/GoogleCloudPlatform/endpoints-framework-gradle-plugin
 [12]: https://cloud.google.com/endpoints/docs/authenticating-users-frameworks
-[13]: https://github.com/cloudendpoints/endpoints-java/issues/43
+[13]: http://localhost:8080/_ah_api/explorer
