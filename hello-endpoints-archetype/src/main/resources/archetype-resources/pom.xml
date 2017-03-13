@@ -31,9 +31,9 @@ limitations under the License.
         <appengine.endpoints.version>1.9.48</appengine.endpoints.version>
         -->
         <!-- End of Endpoints Frameworks v1.0 -->
-        <appengine.maven.version>1.0.0</appengine.maven.version>
-        <endpoints.maven.plugin.version>${endpoints-p}</endpoints.maven.plugin.version>
-        <endpoints.framework.version>${endpoints-fw}</endpoints.framework.version>
+        <appengine.maven.version>${appengine-plugin}</appengine.maven.version>
+        <endpoints.maven.plugin.version>${endpoints-plugin}</endpoints.maven.plugin.version>
+        <endpoints.framework.version>${endpoints-frameworks}</endpoints.framework.version>
         <javax.inject.version>1</javax.inject.version>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>

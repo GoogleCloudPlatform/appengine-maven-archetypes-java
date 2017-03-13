@@ -25,7 +25,7 @@ buildscript {    // Configuration for building
   }
   dependencies {
     classpath 'com.google.cloud.tools:appengine-gradle-plugin:+'    // latest App Engine Gradle tasks
-    classpath 'com.google.cloud.tools:endpoints-framework-gradle-plugin:${endpoints-p}'
+    classpath 'com.google.cloud.tools:endpoints-framework-gradle-plugin:+'
   }
 }
 
@@ -49,7 +49,7 @@ dependencies {
   // End of Endpoints Frameworks v1.0
 
   // Endpoints Frameworks v2.0
-  compile "com.google.endpoints:endpoints-framework:${endpoints-fw}"
+  compile "com.google.endpoints:endpoints-framework:+"
   // End of Endpoints Frameworks v2.0
 }
 
