@@ -41,7 +41,7 @@
       <defaultValue>1.0.0-beta3</defaultValue>
     </requiredProperty>
     <requiredProperty key="appengine-plugin">
-      <defaultValue>1.2.0</defaultValue>
+      <defaultValue>1.2.1</defaultValue>
     </requiredProperty>
     <requiredProperty key="gradle-endpoints-frameworks">
       <defaultValue>2.0.4</defaultValue>
@@ -50,7 +50,7 @@
       <defaultValue>1.0.0-beta6</defaultValue>
     </requiredProperty>
     <requiredProperty key="gradle-appengine-plugin">
-      <defaultValue>1.2.0</defaultValue>
+      <defaultValue>1.1.0</defaultValue>
     </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>
