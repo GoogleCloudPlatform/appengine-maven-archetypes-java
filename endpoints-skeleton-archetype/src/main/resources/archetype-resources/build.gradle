@@ -23,8 +23,8 @@ buildscript {    // Configuration for building
     jcenter()    // Bintray's repository - a fast Maven Central mirror & more
   }
   dependencies {
-    classpath 'com.google.cloud.tools:appengine-gradle-plugin:+'    // latest App Engine Gradle tasks
-    classpath 'com.google.cloud.tools:endpoints-framework-gradle-plugin:+'
+    classpath 'com.google.cloud.tools:appengine-gradle-plugin:${gradle-appengine-plugin}'
+    classpath 'com.google.cloud.tools:endpoints-framework-gradle-plugin:${gradle-endpoints-plugin}'
   }
 }
 
@@ -46,9 +46,8 @@ dependencies {
   // Uncomment to use Endpoints Frameworks v1.0
   // compile group: 'com.google.appengine', name: 'appengine-endpoints', version: '1.9.48'
   // End of Endpoints Frameworks v1.0
-
+  compile group: 'com.google.endpoints', name: 'endpoints-framework-tools', version: '${gradle-endpoints-frameworks}'
   // Endpoints Frameworks v2.0
-  compile "com.google.endpoints:endpoints-frameworks:+"
   // End of Endpoints Frameworks v2.0
 }
 
@@ -62,8 +61,8 @@ appengine {  // App Engine tasks configuration
   }
 }
 
-group   = "${groupId}"        // Generated output GroupId
-version = "1"        // Version in generated output
+group   = '${groupId}' // Generated output GroupId
+version = '1'          // Version in generated output
 
 sourceCompatibility = 1.7     // App Engine Standard uses Java 7
 targetCompatibility = 1.7     // App Engine Standard uses Java 7
