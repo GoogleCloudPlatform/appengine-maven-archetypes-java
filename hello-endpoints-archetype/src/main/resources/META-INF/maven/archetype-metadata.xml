@@ -36,7 +36,7 @@
   </fileSets>
   <requiredProperties>
     <requiredProperty key="endpoints-frameworks">
-      <defaultValue>2.0.3</defaultValue>
+      <defaultValue>2.0.4</defaultValue>
     </requiredProperty>
     <requiredProperty key="endpoints-plugin">
       <defaultValue>1.0.0-beta3</defaultValue>
