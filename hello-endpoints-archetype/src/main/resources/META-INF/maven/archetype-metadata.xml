@@ -51,7 +51,7 @@
       <defaultValue>1.0.0-beta6</defaultValue>
     </requiredProperty>
     <requiredProperty key="gradle-appengine-plugin">
-      <defaultValue>1.1.0</defaultValue>
+      <defaultValue>1.1.1</defaultValue>
     </requiredProperty>
     <requiredProperty key="web-client-id">
       <defaultValue>replace this with your web client ID</defaultValue>
