@@ -49,7 +49,7 @@ dependencies {
   // End of Endpoints Frameworks v1.0
 
   // Endpoints Frameworks v2.0
-  compile group: 'com.google.endpoints', name: 'endpoints-framework-tools', version: '${gradle-endpoints-frameworks}'
+  compile group: 'com.google.endpoints', name: 'endpoints-framework', version: '${gradle-endpoints-frameworks}'
   // End of Endpoints Frameworks v2.0
 }
 

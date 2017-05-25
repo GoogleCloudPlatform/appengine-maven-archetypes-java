@@ -46,7 +46,7 @@ dependencies {
   // Uncomment to use Endpoints Frameworks v1.0
   // compile group: 'com.google.appengine', name: 'appengine-endpoints', version: '1.9.48'
   // End of Endpoints Frameworks v1.0
-  compile group: 'com.google.endpoints', name: 'endpoints-framework-tools', version: '${gradle-endpoints-frameworks}'
+  compile group: 'com.google.endpoints', name: 'endpoints-framework', version: '${gradle-endpoints-frameworks}'
   // Endpoints Frameworks v2.0
   // End of Endpoints Frameworks v2.0
 }
