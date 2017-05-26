@@ -23,8 +23,8 @@ buildscript {    // Configuration for building
     jcenter()    // Bintray's repository - a fast Maven Central mirror & more
   }
   dependencies {
-    classpath 'com.google.cloud.tools:appengine-gradle-plugin:+'    // latest App Engine Gradle tasks
-    classpath 'com.google.cloud.tools:endpoints-framework-gradle-plugin:${endpoints-p}'
+    classpath 'com.google.cloud.tools:appengine-gradle-plugin:${gradle-appengine-plugin}'
+    classpath 'com.google.cloud.tools:endpoints-framework-gradle-plugin:${gradle-endpoints-plugin}'
   }
 }
 
@@ -42,13 +42,13 @@ dependencies {
   providedCompile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
   compile 'jstl:jstl:1.2'
   compile group: 'javax.inject', name: 'javax.inject', version: '1'
+  compile group: 'com.google.appengine', name: 'appengine-api-1.0-sdk', version: '+'
 
-  // Uncomment to use Endpoints Frameworks v1.0
-  // compile group: 'com.google.appengine', name: 'appengine-endpoints', version: '1.9.48'
+  // Uncomment to use Endpoints Frameworks v1.0 and comment the v2.0 section
+  // compile group: 'com.google.appengine', name: 'appengine-endpoints', version: '+'
   // End of Endpoints Frameworks v1.0
-
+  compile group: 'com.google.endpoints', name: 'endpoints-framework', version: '${gradle-endpoints-frameworks}'
   // Endpoints Frameworks v2.0
-  compile "com.google.endpoints:endpoints-frameworks:${endpoints-fw}"
   // End of Endpoints Frameworks v2.0
 }
 
@@ -62,8 +62,13 @@ appengine {  // App Engine tasks configuration
   }
 }
 
-group   = "${groupId}"        // Generated output GroupId
-version = "1"        // Version in generated output
+endpointsServer {
+  // Endpoints Framework Plugin server-side configuration
+  hostname = "${google-cloud-project}.appspot.com"
+}
+
+group   = '${groupId}' // Generated output GroupId
+version = '1'          // Version in generated output
 
 sourceCompatibility = 1.7     // App Engine Standard uses Java 7
 targetCompatibility = 1.7     // App Engine Standard uses Java 7

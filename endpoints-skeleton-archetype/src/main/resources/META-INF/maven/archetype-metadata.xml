@@ -34,11 +34,29 @@
     </fileSet>
   </fileSets>
   <requiredProperties>
-    <requiredProperty key="endpoints-fw">
-      <defaultValue>2.0.0-beta.12</defaultValue>
+    <requiredProperty key="google-cloud-project">
+      <defaultValue>YOUR-PROJECT-ID</defaultValue>
     </requiredProperty>
-    <requiredProperty key="endpoints-p">
-      <defaultValue>1.0.0-beta2</defaultValue>
+    <requiredProperty key="appengine-sdk">
+      <defaultValue>1.9.53</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="endpoints-frameworks">
+      <defaultValue>2.0.7</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="endpoints-plugin">
+      <defaultValue>1.0.0</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="appengine-plugin">
+      <defaultValue>1.3.1</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="gradle-endpoints-frameworks">
+      <defaultValue>+</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="gradle-endpoints-plugin">
+      <defaultValue>+</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="gradle-appengine-plugin">
+      <defaultValue>+</defaultValue>
     </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>

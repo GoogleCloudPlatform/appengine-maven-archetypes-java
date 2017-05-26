@@ -26,52 +26,42 @@ limitations under the License.
     <artifactId>${artifactId}</artifactId>
 
     <properties>
-        <!-- Uncomment to use Endpoints Frameworks v1.0 -->
-        <!--
-        <appengine.endpoints.version>1.9.48</appengine.endpoints.version>
-        -->
-        <!-- End of Endpoints Frameworks v1.0 -->
-        <appengine.maven.version>1.0.0</appengine.maven.version>
-        <endpoints.maven.plugin.version>${endpoints-p}</endpoints.maven.plugin.version>
-        <endpoints.framework.version>${endpoints-fw}</endpoints.framework.version>
-        <javax.inject.version>1</javax.inject.version>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <mojo.versions.maven.version>2.1</mojo.versions.maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <servlet.api.version>2.5</servlet.api.version>
     </properties>
-
-    <prerequisites>
-        <maven>3.3.9</maven>
-    </prerequisites>
 
     <dependencies>
         <!-- Compile/runtime dependencies -->
-        <!-- Uncomment to use Endpoints Frameworks v1.0 -->
+        <!-- Uncomment to use Endpoints Frameworks v1.0 and comment the v2.0 section -->
         <!--<dependency>
               <groupId>com.google.appengine</groupId>
               <artifactId>appengine-endpoints</artifactId>
-              <version>${appengine.endpoints.version}</version>
+              <version>${appengine-sdk}</version>
         </dependency>-->
         <!-- End of Endpoints Frameworks v1.0 -->
         <!-- Endpoints Frameworks v2.0 -->
         <dependency>
             <groupId>com.google.endpoints</groupId>
             <artifactId>endpoints-framework</artifactId>
-            <version>${endpoints.framework.version}</version>
+            <version>${endpoints-frameworks}</version>
         </dependency>
         <!-- End of Endpoints Frameworks v2.0 -->
         <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${appengine-sdk}</version>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <version>${servlet.api.version}</version>
+            <version>2.5</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
-            <version>${javax.inject.version}</version>
+            <version>1</version>
         </dependency>
     </dependencies>
 
@@ -82,7 +72,7 @@ limitations under the License.
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>appengine-maven-plugin</artifactId>
-                <version>${appengine.maven.version}</version>
+                <version>${appengine-plugin}</version>
                 <configuration>
                     <!-- deploy configuration -->
                 </configuration>
@@ -90,24 +80,16 @@ limitations under the License.
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>endpoints-framework-maven-plugin</artifactId>
-                <version>${endpoints.maven.plugin.version}</version>
+                <version>${endpoints-plugin}</version>
                 <configuration>
-                    <webappDir>src/main/webapp</webappDir>
-                    <discoveryDocDir>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF</discoveryDocDir>
+                    <!-- plugin configuration -->
+                    <hostname>${google-cloud-project}.appspot.com</hostname>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>discoveryDocs</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
-                <version>${mojo.versions.maven.version}</version>
+                <version>2.1</version>
                 <executions>
                     <execution>
                         <phase>compile</phase>
