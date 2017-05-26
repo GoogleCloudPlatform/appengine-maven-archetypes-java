@@ -33,7 +33,7 @@ limitations under the License.
 
     <dependencies>
         <!-- Compile/runtime dependencies -->
-        <!-- Uncomment to use Endpoints Frameworks v1.0 -->
+        <!-- Uncomment to use Endpoints Frameworks v1.0 and comment the v2.0 section -->
         <!--<dependency>
               <groupId>com.google.appengine</groupId>
               <artifactId>appengine-endpoints</artifactId>
