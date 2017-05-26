@@ -43,14 +43,16 @@ dependencies {
   providedCompile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
   compile 'jstl:jstl:1.2'
   compile group: 'javax.inject', name: 'javax.inject', version: '1'
+  compile group: 'com.google.appengine', name: 'appengine-api-1.0-sdk', version: '$${appengine-sdk}'
 
   // Uncomment to use Endpoints Frameworks v1.0
-  // compile group: 'com.google.appengine', name: 'appengine-endpoints', version: '1.9.48'
+  // compile group: 'com.google.appengine', name: 'appengine-endpoints', version: '${appengine-sdk}'
   // End of Endpoints Frameworks v1.0
 
   // Endpoints Frameworks v2.0
   compile group: 'com.google.endpoints', name: 'endpoints-framework', version: '${gradle-endpoints-frameworks}'
   // End of Endpoints Frameworks v2.0
+
 }
 
 appengine {  // App Engine tasks configuration
@@ -61,6 +63,11 @@ appengine {  // App Engine tasks configuration
   deploy {   // deploy configuration
 
   }
+}
+
+endpointsServer {
+  // Endpoints Framework Plugin server-side configuration
+  hostname = "${google-cloud-project}.appspot.com"
 }
 
 group   = '${groupId}' // Generated output GroupId

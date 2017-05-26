@@ -26,11 +26,7 @@ limitations under the License.
     <artifactId>${artifactId}</artifactId>
 
     <properties>
-        <!-- Uncomment to use Endpoints Frameworks v1.0 -->
-        <!--
-        <appengine.endpoints.version>1.9.48</appengine.endpoints.version>
-        -->
-        <!-- End of Endpoints Frameworks v1.0 -->
+        <appengine.tools.version>${appengine-sdk}</appengine.tools.version>
         <appengine.maven.version>${appengine-plugin}</appengine.maven.version>
         <endpoints.maven.plugin.version>${endpoints-plugin}</endpoints.maven.plugin.version>
         <endpoints.framework.version>${endpoints-frameworks}</endpoints.framework.version>
@@ -42,17 +38,13 @@ limitations under the License.
         <servlet.api.version>2.5</servlet.api.version>
     </properties>
 
-    <prerequisites>
-        <maven>3.3.9</maven>
-    </prerequisites>
-
     <dependencies>
         <!-- Compile/runtime dependencies -->
         <!-- Uncomment to use Endpoints Frameworks v1.0 -->
         <!--<dependency>
               <groupId>com.google.appengine</groupId>
               <artifactId>appengine-endpoints</artifactId>
-              <version>${appengine.endpoints.version}</version>
+              <version>${appengine.tools.version}</version>
         </dependency>-->
         <!-- End of Endpoints Frameworks v1.0 -->
         <!-- Endpoints Frameworks v2.0 -->
@@ -62,6 +54,11 @@ limitations under the License.
             <version>${endpoints.framework.version}</version>
         </dependency>
         <!-- End of Endpoints Frameworks v2.0 -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${appengine.tools.version}</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
@@ -92,17 +89,9 @@ limitations under the License.
                 <artifactId>endpoints-framework-maven-plugin</artifactId>
                 <version>${endpoints.maven.plugin.version}</version>
                 <configuration>
-                    <webappDir>src/main/webapp</webappDir>
-                    <discoveryDocDir>${project.build.directory}/generated-sources/appengine-endpoints/WEB-INF</discoveryDocDir>
+                    <!-- plugin configuration -->
+                    <hostname>${google-cloud-project}.appspot.com</hostname>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>discoveryDocs</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

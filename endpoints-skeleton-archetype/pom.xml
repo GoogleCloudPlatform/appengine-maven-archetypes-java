@@ -29,6 +29,6 @@ limitations under the License.
   <packaging>maven-archetype</packaging>
 
   <name>endpoints-skeleton-archetype</name>
-  <description>A skeleton project using Cloud Endpoints with Google App Engine Standard</description>
-  <url>https://cloud.google.com/appengine/docs/java/endpoints/</url>
+  <description>A skeleton project using Cloud Endpoints Frameworks with Google App Engine Standard</description>
+  <url>https://cloud.google.com/endpoints/</url>
 </project>

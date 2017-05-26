@@ -34,6 +34,12 @@
     </fileSet>
   </fileSets>
   <requiredProperties>
+    <requiredProperty key="google-cloud-project">
+      <defaultValue>YOUR-PROJECT-ID</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="appengine-sdk">
+      <defaultValue>1.9.53</defaultValue>
+    </requiredProperty>
     <requiredProperty key="endpoints-frameworks">
       <defaultValue>2.0.7</defaultValue>
     </requiredProperty>

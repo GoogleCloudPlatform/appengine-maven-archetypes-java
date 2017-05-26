@@ -50,49 +50,41 @@ process is explained [here][8] and a quickstart is provided [here][9].
 
 ###  Maven
 
-1. Build a fresh binary by using:
+1. Build and Run the application locally at [http://localhost:8080][5] by using:
 
-    `mvn clean compile`
-
-1. Run the application locally at [http://localhost:8080][5] by using:
-
-    `mvn appengine:run`
+    `mvn clean appengine:run`
 
 1. Explore local server's API explorer by browsing to:
 
     [http://localhost:8080/_ah/api/explorer][13]
 
-1. Generate the client library located at `target/client-libs/helloworld-v1-java.zip`
+1. Generate the client library with a readme located at `target/client-libs/helloworld-v1-java.zip`
    by using:
 
     `mvn endpoints-framework:clientLibs`
 
-1. Deploy your application to Google App Engine by using:
+1. Build and Deploy your application to Google App Engine by using:
 
-    `mvn appengine:deploy`
+    `mvn clean appengine:deploy`
 
 ### Gradle
 
-1. Build a fresh binary by using:
+1. Build and Run the application locally at [http://localhost:8080][5] by using:
 
-    `gradle clean compileJava`
-
-1. Run the application locally at [http://localhost:8080][5] by using:
-
-    `gradle appengineRun`
+    `gradle clean appengineRun`
 
 1. Explore local server's API explorer by browsing to:
 
     [http://localhost:8080/_ah/api/explorer][13]
 
-1. Generate the client library located at `build/endpointsClientLibs/helloworld-v1-java.zip`
-   by using:
+1. Generate the client library with a readme located at
+   `build/endpointsClientLibs/helloworld-v1-java.zip` by using:
 
     `gradle endpointsClientLibs`
 
-1. Deploy your application to Google App Engine by using:
+1. Build and Deploy your application to Google App Engine by using:
 
-    `gradle appengineDeploy`
+    `gradle clean appengineDeploy`
 
 [1]: https://cloud.google.com/appengine/docs/java/
 [2]: http://java.com/en/
