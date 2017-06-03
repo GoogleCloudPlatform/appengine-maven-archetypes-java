@@ -42,5 +42,8 @@
     <requiredProperty key="application-id">
       <defaultValue>your-app-id</defaultValue>
     </requiredProperty>
+    <requiredProperty key="service">
+    	<defaultValue>default</defaultValue>
+    </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>

@@ -25,7 +25,9 @@
     <runtime>java8</runtime>
 #end
     <threadsafe>true</threadsafe>
-
+#if ( $service != "default" )
+    <service>$service</service>
+#end
     <system-properties>
         <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
     </system-properties>
