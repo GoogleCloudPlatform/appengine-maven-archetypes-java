@@ -3,29 +3,10 @@
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <fileSets>
-    <fileSet filtered="true" encoding="UTF-8" packaged="true">
-      <directory>src/main/java</directory>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>src/test</directory>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>src/main/webapp</directory>
-      <includes>
-        <include>**/*</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>eclipse-launch-profiles</directory>
-      <includes>
-        <include>**/*.launch</include>
-      </includes>
-    </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>nbactions.xml</include>
-        <include>README.md</include>
+        <include>**/*</include>
       </includes>
     </fileSet>
   </fileSets>
