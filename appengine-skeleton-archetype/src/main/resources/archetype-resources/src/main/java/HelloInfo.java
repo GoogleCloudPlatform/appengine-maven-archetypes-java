@@ -11,22 +11,16 @@
 ## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ## See the License for the specific language governing permissions and
 ## limitations under the License.
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
-<?xml version="1.0" encoding="utf-8"?>
-<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-#if ( $CloudSDK_Tooling == "true" )
-#else
-    <application>${application-id}</application>
-    <version>1</version>
-#end
-#if ( $java8 == "true" )
-    <runtime>java8</runtime>
-#end
-    <threadsafe>true</threadsafe>
+package ${package};
 
-    <system-properties>
-        <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
-    </system-properties>
-</appengine-web-app>
+/**
+ * Generate some simple information.
+ */
+public class HelloInfo {
+
+  public static String getInfo() {
+    return "Version: " + System.getProperty("java.version")
+          + " OS: " + System.getProperty("os.name")
+          + " User: " + System.getProperty("user.name");
+  }
+}

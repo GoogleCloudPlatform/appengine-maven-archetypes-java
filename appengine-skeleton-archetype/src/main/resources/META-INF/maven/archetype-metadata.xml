@@ -12,28 +12,16 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory>src/main/webapp</directory>
       <includes>
-        <include>**/*.xml</include>
+        <include>**/*</include>
       </includes>
     </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>src/main/webapp</directory>
-      <includes>
-        <include>**/*.properties</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>src/main/webapp</directory>
-      <includes>
-        <include>**/*.html</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
+    <fileSet filtered="true" encoding="UTF-8">
       <directory>eclipse-launch-profiles</directory>
       <includes>
         <include>**/*.launch</include>
       </includes>
     </fileSet>
-    <fileSet encoding="UTF-8">
+    <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
         <include>nbactions.xml</include>
@@ -42,14 +30,17 @@
     </fileSet>
   </fileSets>
   <requiredProperties>
+  	<requiredProperty key="java8">
+  		<defaultValue>true</defaultValue>
+  	</requiredProperty>
+  	<requiredProperty key="CloudSDK_Tooling">
+  	  <defaultValue>true</defaultValue>
+  	</requiredProperty>
     <requiredProperty key="appengine-version">
       <defaultValue>${appengine.sdk.version}</defaultValue>
     </requiredProperty>
     <requiredProperty key="application-id">
       <defaultValue>your-app-id</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="gcloud-version">
-      <defaultValue>${gcloud.plugin.version}</defaultValue>
     </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>

@@ -11,22 +11,26 @@
 ## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ## See the License for the specific language governing permissions and
 ## limitations under the License.
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
-<?xml version="1.0" encoding="utf-8"?>
-<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-#if ( $CloudSDK_Tooling == "true" )
-#else
-    <application>${application-id}</application>
-    <version>1</version>
-#end
-#if ( $java8 == "true" )
-    <runtime>java8</runtime>
-#end
-    <threadsafe>true</threadsafe>
+<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="${package}.HelloInfo" %>
+<html>
+<head>
+  <link href='//fonts.googleapis.com/css?family=Marmelad' rel='stylesheet' type='text/css'>
+  <title>Hello App Engine Standard Java 8</title>
+</head>
+<body>
+    <h1>Hello App Engine -- Java 8!</h1>
 
-    <system-properties>
-        <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
-    </system-properties>
-</appengine-web-app>
+  <p>This is <%= HelloInfo.getInfo() %>.</p>
+  <table>
+    <tr>
+      <td colspan="2" style="font-weight:bold;">Available Servlets:</td>
+    </tr>
+    <tr>
+      <td><a href='/hello'>Hello App Engine</a></td>
+    </tr>
+  </table>
+
+</body>
+</html>

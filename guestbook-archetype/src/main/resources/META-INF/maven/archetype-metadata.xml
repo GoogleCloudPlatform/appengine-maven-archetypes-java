@@ -45,6 +45,12 @@
     </fileSet>
   </fileSets>
   <requiredProperties>
+  	<requiredProperty key="java8">
+  		<defaultValue>true</defaultValue>
+  	</requiredProperty>
+  	<requiredProperty key="flex">
+  	  <defaultValue>false</defaultValue>
+  	</requiredProperty>
     <requiredProperty key="appengine-version">
       <defaultValue>${appengine.sdk.version}</defaultValue>
     </requiredProperty>
