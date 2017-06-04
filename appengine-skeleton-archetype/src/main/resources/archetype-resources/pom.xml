@@ -24,12 +24,10 @@
   <artifactId>${artifactId}</artifactId>
 
   <properties>
+#if ( $CloudSDK_Tooling == "true" )
     <!-- uncomment if you wish to set your project here project- gcloud is used otherwise -->
-<!--
-    <app.deploy.project>${application-id}</app.deploy.project>
- -->
-
-    <appengine.version>${appengine-version}</appengine.version>
+    <!-- <app.deploy.project>${application-id}</app.deploy.project> -->
+#end
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 #if ( $java8 == "true" )
@@ -52,7 +50,7 @@
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-api-1.0-sdk</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine-version}</version>
     </dependency>
 #if ( $java8 == "true" )
     <dependency>
@@ -80,20 +78,20 @@
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-testing</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine-version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-api-stubs</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine-version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-tools-sdk</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine-version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -134,9 +132,9 @@
       <plugin>
         <groupId>com.google.appengine</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
-        <version>${appengine.version}</version>
+        <version>${appengine-version}</version>
         <configuration>
-          <appId>${application-id}{</appId> <!-- Override appengine-web.xml <project> -->
+          <appId>${application-id}</appId> <!-- Override appengine-web.xml <project> -->
           <version>1</version>
           <fullScanSeconds>1</fullScanSeconds>
           <retainUploadDir>true</retainUploadDir>

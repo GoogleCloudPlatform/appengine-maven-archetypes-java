@@ -1,52 +1,47 @@
+#set( $pound = '#' )
 appengine-standard-archetype
 ============================
 
 This is a generated App Engine Standard Java application from the appengine-standard-archetype archetype.
 
-## Requirements
+See the [Google App Engine standard environment documentation][ae-docs] for more
+detailed instructions.
 
-* Java 7
-* [Maven](https://maven.apache.org/download.cgi) (at least 3.3.9)
-* [Gradle](https://gradle.org/gradle-download/) (optional)
+[ae-docs]: https://cloud.google.com/appengine/docs/java/
+
+
+* [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Maven](https://maven.apache.org/download.cgi) (at least 3.5)
 * [Google Cloud SDK](https://cloud.google.com/sdk/) (aka gcloud)
 
-Initialize the Google Cloud SDK using:
+$pound$pound Setup
 
     gcloud init
+    gcloud auth application-default login
 
-This skeleton is ready to run.
+$pound$pound Maven
+$pound$pound$pound Running locally
 
-## Maven
-
-### Run Locally
-
+#if ( $CloudSDK_Tooling == "true" )
     mvn appengine:run
+#else
+    mvn appengine:devappserver
+#end
 
-### Deploy
+$pound$pound$pound Deploying
 
+#if ( $CloudSDK_Tooling == "true" )
     mvn appengine:deploy
+#else
+    mvn appengine:update
+#end
 
-### Test Only
+$pound$pound Testing
 
-    mvn test
+    mvn verify
 
-## Gradle
-
-### Run Locally
-
-    gradle appengineRun
-
-### Deploy
-
-    gradle appengineDeploy
-
-### Test Only
-
-    gradle test
-
-## Modify the Skeleton
-
-As you add / modify the source code (`src/main/java/...`) it's very useful to add [unit testing](https://cloud.google.com/appengine/docs/java/tools/localunittesting)
+As you add / modify the source code (`src/main/java/...`) it's very useful to add
+[unit testing](https://cloud.google.com/appengine/docs/java/tools/localunittesting)
 to (`src/main/test/...`).  The following resources are quite useful:
 
 * [Junit4](http://junit.org/junit4/)

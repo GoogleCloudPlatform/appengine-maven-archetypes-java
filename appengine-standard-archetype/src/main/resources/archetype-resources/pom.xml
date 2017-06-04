@@ -1,22 +1,20 @@
+## Copyright 2017 Google Inc.
+##
+## Licensed under the Apache License, Version 2.0 (the "License");
+## you may not use this file except in compliance with the License.
+## You may obtain a copy of the License at
+##
+## http://www.apache.org/licenses/LICENSE-2.0
+##
+## Unless required by applicable law or agreed to in writing, software
+## distributed under the License is distributed on an "AS IS" BASIS,
+## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+## See the License for the specific language governing permissions and
+## limitations under the License.
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Copyright 2016 Google Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
@@ -27,22 +25,25 @@ limitations under the License.
   <artifactId>${artifactId}</artifactId>
 
   <properties>
-    <appengine.version>${appengine-version}</appengine.version>
-    <appengine.maven.plugin.version>1.0.0</appengine.maven.plugin.version>
+#if ( $CloudSDK_Tooling == "true" )
+    <!-- uncomment if you wish to set your project here project- gcloud is used otherwise -->
+    <!-- <app.deploy.project>${application-id}</app.deploy.project> -->
+#end
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+#if ( $java8 == "true" )
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+#else
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+#end
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <archiveClasses>true</archiveClasses>
-    <objectify.version>5.1.13</objectify.version>
-    <guava.version>18.0</guava.version>
-    <endpoints.framework.version>2.0.0-beta.7</endpoints.framework.version>
-    <endpoints.management.version>1.0.0-beta.7</endpoints.management.version>
   </properties>
 
   <prerequisites>
-    <maven>3.3.9</maven>
+    <maven>3.5</maven>
   </prerequisites>
 
   <dependencies>
@@ -50,93 +51,107 @@ limitations under the License.
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-api-1.0-sdk</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine-version}</version>
     </dependency>
+#if ( $java8 == "true" )
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <type>jar</type>
+      <scope>provided</scope>
+    </dependency>
+#else
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
       <scope>provided</scope>
     </dependency>
-#if(${useJstl} == "true")    
+#end
+#if(${useJstl} == "true")
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
  #end
- 
-#if(${useObjectify} == "true")    
+
+#if(${useObjectify} == "true")
   <dependency>
     <groupId>com.google.guava</groupId>
     <artifactId>guava</artifactId>
-    <version>${guava.version}</version>
+#if ( $java8 == "true" )
+    <version>22.0</version>
+#else
+    <version>21.0</version>
+#end
   </dependency>
   <dependency>
     <groupId>com.googlecode.objectify</groupId>
     <artifactId>objectify</artifactId>
-    <version>${objectify.version}</version>
+    <version>5.1.17</version>
   </dependency>
 #end
 
-#if(${useEndpoints1} == "true" || ${useAppEngineApi} == "true")    
+#if(${useEndpoints1} == "true" || ${useAppEngineApi} == "true")
   <dependency>
     <groupId>com.google.appengine</groupId>
     <artifactId>appengine-api-1.0-sdk</artifactId>
-    <version>${appengine.version}</version>
+    <version>${appengine-version}</version>
   </dependency>
 #end
 
-#if(${useEndpoints1} == "true")    
+#if(${useEndpoints1} == "true")
   <dependency>
     <groupId>com.google.appengine</groupId>
     <artifactId>appengine-endpoints</artifactId>
-    <version>${appengine.version}</version>
+    <version>${appengine-version}</version>
   </dependency>
 #end
-#if(${useEndpoints2} == "true")    
+#if(${useEndpoints2} == "true")
   <dependency>
     <groupId>com.google.endpoints</groupId>
     <artifactId>endpoints-framework</artifactId>
-    <version>${endpoints.framework.version}</version>
+    <version>2.0.7</version>
   </dependency>
   <dependency>
     <groupId>com.google.endpoints</groupId>
     <artifactId>endpoints-management-control-appengine</artifactId>
-    <version>${endpoints.management.version}</version>
+    <version>1.0.3</version>
   </dependency>
   <dependency>
     <groupId>com.google.endpoints</groupId>
     <artifactId>endpoints-framework-auth</artifactId>
-    <version>${endpoints.management.version}</version>
+    <version1.0.3</version>
   </dependency>
 #end
- 
+
     <!-- Test Dependencies -->
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-testing</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine-version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-api-stubs</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine-version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>com.google.appengine</groupId>
       <artifactId>appengine-tools-sdk</artifactId>
-      <version>${appengine.version}</version>
+      <version>${appengine-version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
-      <version>0.30</version>
+      <version>0.33</version>
       <scope>test</scope>
     </dependency>
 
@@ -158,6 +173,28 @@ limitations under the License.
     <!-- for hot reload of the web application-->
     <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
     <plugins>
+#if ( $CloudSDK_Tooling == "true" )
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>1.3.1</version>
+        <configuration>
+        </configuration>
+      </plugin>
+#else
+      <plugin>
+        <groupId>com.google.appengine</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>${appengine-version}</version>
+        <configuration>
+          <appId>${application-id}</appId> <!-- Override appengine-web.xml <project> -->
+          <version>1</version>
+          <fullScanSeconds>1</fullScanSeconds>
+          <retainUploadDir>true</retainUploadDir>
+        </configuration>
+      </plugin>
+#end
+
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
@@ -174,28 +211,69 @@ limitations under the License.
       </plugin>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.6</version> <!-- required for Eclipse Mars -->
-        <configuration>
-          <archiveClasses>true</archiveClasses>
-          <webResources>
-            <!-- in order to interpolate version from pom into appengine-web.xml -->
-            <resource>
-              <directory>${basedir}/src/main/webapp/WEB-INF</directory>
-              <filtering>true</filtering>
-              <targetPath>WEB-INF</targetPath>
-            </resource>
-          </webResources>
-        </configuration>
+        <version>3.1.0</version>
       </plugin>
 
       <plugin>
-        <groupId>com.google.cloud.tools</groupId>
-        <artifactId>appengine-maven-plugin</artifactId>
-        <version>${appengine.maven.plugin.version}</version>
-        <configuration>
-        </configuration>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.0.0</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.5.2</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.20</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.6</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.2</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.1</version>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>1.4.1</version>
+        <executions>
+          <execution>
+            <id>enforce-maven</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>3.5</version>
+                </requireMavenVersion>
+                <requirePluginVersions>
+                   <message>Best Practice is to always define plugin versions!</message>
+                   <banLatest>true</banLatest>
+                   <banRelease>true</banRelease>
+                   <phases>clean,deploy,verify,appengine:run,appengine:deploy,appengine:update,appengine:devappaserver,site</phases>
+                </requirePluginVersions>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

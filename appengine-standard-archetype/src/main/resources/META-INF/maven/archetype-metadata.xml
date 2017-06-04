@@ -30,25 +30,31 @@ limitations under the License.
         <include>**/*</include>
       </includes>
     </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>eclipse-launch-profiles</directory>
-      <includes>
-        <include>**/*.launch</include>
-      </includes>
-    </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
         <include>nbactions.xml</include>
         <include>README.md</include>
-        <include>build.gradle</include>
       </includes>
     </fileSet>
   </fileSets>
   <requiredProperties>
+  	<requiredProperty key="java8">
+  		<defaultValue>true</defaultValue>
+  	</requiredProperty>
+  	<requiredProperty key="CloudSDK_Tooling">
+  	  <defaultValue>true</defaultValue>
+  	</requiredProperty>
     <requiredProperty key="appengine-version">
       <defaultValue>${appengine.sdk.version}</defaultValue>
     </requiredProperty>
+    <requiredProperty key="application-id">
+      <defaultValue>your-app-id</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="service">
+    	<defaultValue>default</defaultValue>
+    </requiredProperty>
+
     <requiredProperty key="useJstl">
       <defaultValue>true</defaultValue>
     </requiredProperty>
