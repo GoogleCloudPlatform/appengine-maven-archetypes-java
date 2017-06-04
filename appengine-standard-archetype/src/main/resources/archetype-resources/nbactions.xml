@@ -17,17 +17,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
     <action>
-        <actionName>CUSTOM-appengine:run-local-standard</actionName>
-        <displayName>appengine:run-local-standard</displayName>
+#if ( $CloudSDK_Tooling == "true" )
+       <actionName>CUSTOM-appengine:run</actionName>
+        <displayName>appengine:run</displayName>
         <goals>
             <goal>appengine:run</goal>
+#else
+       <actionName>CUSTOM-appengine:devappserver</actionName>
+        <displayName>appengine:devappserver</displayName>
+        <goals>
+            <goal>appengine:devappserver</goal>
+#end
         </goals>
     </action>
     <action>
+#if ( $CloudSDK_Tooling == "true" )
         <actionName>CUSTOM-appengine:deploy</actionName>
         <displayName>appengine:deploy</displayName>
         <goals>
             <goal>appengine:deploy</goal>
+#else
+        <actionName>CUSTOM-appengine:update</actionName>
+        <displayName>appengine:update</displayName>
+        <goals>
+            <goal>appengine:update</goal>
+#end
         </goals>
     </action>
 </actions>

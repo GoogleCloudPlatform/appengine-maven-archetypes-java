@@ -77,8 +77,8 @@ public class HelloAppEngineTest {
 
   @Test
   public void helloInfoTest() {
-    String result = HelloInfo.getInfo();
-    assertThat(HelloInfo.getInfo())
+    String result = HelloAppEngine.getInfo();
+    assertThat(result)
       .named("HelloInfo.getInfo")
       .containsMatch("^Version:\\s+.+OS:\\s+.+User:\\s");
   }
