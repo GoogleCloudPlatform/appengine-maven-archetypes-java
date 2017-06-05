@@ -32,16 +32,15 @@ limitations under the License.
   </licenses>
 
   <prerequisites>
-    <maven>3.3.9</maven>
+    <maven>3.5</maven>
   </prerequisites>
 
   <modules>
     <module>appengine-standard-archetype</module>
-    <module>appengine-flexible-archetype</module>
-
     <module>appengine-skeleton-archetype</module>
-
     <module>guestbook-archetype</module>
+
+    <module>appengine-flexible-archetype</module>
 
     <module>endpoints-skeleton-archetype</module>
     <module>hello-endpoints-archetype</module>
@@ -50,11 +49,8 @@ limitations under the License.
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
 
-    <appengine.sdk.version>1.9.42</appengine.sdk.version>
-    <gcloud.plugin.version>2.0.9.121.v20160815</gcloud.plugin.version>
+    <appengine.sdk.version>1.9.53</appengine.sdk.version>
   </properties>
 
   <build>
@@ -77,6 +73,18 @@ limitations under the License.
     <developer>
       <name>Les Vogel</name>
       <email>lesv@google.com</email>
+      <organization>Google</organization>
+      <organizationUrl>http://www.google.com</organizationUrl>
+    </developer>
+    <developer>
+      <name>Jisha Abubaker</name>
+      <email>jishaa@google.com</email>
+      <organization>Google</organization>
+      <organizationUrl>http://www.google.com</organizationUrl>
+    </developer>
+    <developer>
+      <name>Frank Natividad</name>
+      <email>franknatividad@google.com</email>
       <organization>Google</organization>
       <organizationUrl>http://www.google.com</organizationUrl>
     </developer>
@@ -110,7 +118,7 @@ limitations under the License.
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.0.0</version>
+            <version>3.0.1</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
@@ -136,8 +144,9 @@ limitations under the License.
           </plugin>
 
           <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-archetype-plugin</artifactId>
-            <version>2.4</version>
+            <version>3.0.1</version>  <!-- 3.0.1 -->
           </plugin>
 
           <plugin>

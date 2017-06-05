@@ -15,6 +15,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <project>
+  <groupId>com.google.appengine.archetypes</groupId>
+  <artifactId>appengine-standard-archetype</artifactId>
+  <version>1.0.0</version>
+  <packaging>maven-archetype</packaging>
+
+  <name>appengine-standard-archetype</name>
+  <description>A basic Java application with Google App Engine Standard</description>
+
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -22,13 +30,5 @@ limitations under the License.
     <artifactId>archetypes</artifactId>
     <version>1.0.0</version>
   </parent>
-
-  <groupId>com.google.appengine.archetypes</groupId>
-  <artifactId>appengine-standard-archetype</artifactId>
-  <version>0.4.0</version>
-  <packaging>maven-archetype</packaging>
-
-  <name>appengine-standard-archetype</name>
-  <description>A basic Java application with Google App Engine Standard</description>
 
 </project>

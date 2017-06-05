@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2016 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
 <archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="guestbook-archetype"
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <fileSets>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
       <directory>src/main/java</directory>
-      <includes>
-        <include>**/*.java</include>
-      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8" packaged="true">
+      <directory>src/test/java</directory>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
       <directory>src/main/webapp</directory>
-      <includes>
-        <include>**/*.jsp</include>
-        <include>**/*.xml</include>
-      </includes>
     </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>src/main/webapp</directory>
-      <includes>
-        <include>**/*.css</include>
-        <include>**/*.properties</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" packaged="true" encoding="UTF-8">
-      <directory>src/test/java</directory>
-      <includes>
-        <include>**/*.java</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>eclipse-launch-profiles</directory>
-      <includes>
-        <include>**/*.launch</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
+    <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>LICENSE</include>
         <include>README.md</include>
         <include>nbactions.xml</include>
       </includes>
     </fileSet>
   </fileSets>
   <requiredProperties>
+  	<requiredProperty key="java8">
+  		<defaultValue>true</defaultValue>
+  	</requiredProperty>
+  	<requiredProperty key="CloudSDK_Tooling">
+  	  <defaultValue>true</defaultValue>
+  	</requiredProperty>
     <requiredProperty key="appengine-version">
       <defaultValue>${appengine.sdk.version}</defaultValue>
     </requiredProperty>
     <requiredProperty key="application-id">
       <defaultValue>your-app-id</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="service">
+    	<defaultValue>default</defaultValue>
     </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>
