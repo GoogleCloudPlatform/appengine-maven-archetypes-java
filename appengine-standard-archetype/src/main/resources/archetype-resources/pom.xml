@@ -78,53 +78,53 @@
  #end
 
 #if(${useObjectify} == "true")
-  <dependency>
-    <groupId>com.google.guava</groupId>
-    <artifactId>guava</artifactId>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
 #if ( $java8 == "true" )
-    <version>22.0</version>
+      <version>22.0</version>
 #else
-    <version>21.0</version>
+      <version>21.0</version>
 #end
-  </dependency>
-  <dependency>
-    <groupId>com.googlecode.objectify</groupId>
-    <artifactId>objectify</artifactId>
-    <version>5.1.17</version>
-  </dependency>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.objectify</groupId>
+      <artifactId>objectify</artifactId>
+      <version>5.1.17</version>
+    </dependency>
 #end
 
 #if(${useEndpoints1} == "true" || ${useAppEngineApi} == "true")
-  <dependency>
-    <groupId>com.google.appengine</groupId>
-    <artifactId>appengine-api-1.0-sdk</artifactId>
-    <version>${appengine-version}</version>
-  </dependency>
+    <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-api-1.0-sdk</artifactId>
+      <version>${appengine-version}</version>
+    </dependency>
 #end
 
 #if(${useEndpoints1} == "true")
-  <dependency>
-    <groupId>com.google.appengine</groupId>
-    <artifactId>appengine-endpoints</artifactId>
-    <version>${appengine-version}</version>
-  </dependency>
+    <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-endpoints</artifactId>
+      <version>${appengine-version}</version>
+    </dependency>
 #end
 #if(${useEndpoints2} == "true")
-  <dependency>
-    <groupId>com.google.endpoints</groupId>
-    <artifactId>endpoints-framework</artifactId>
-    <version>2.0.7</version>
-  </dependency>
-  <dependency>
-    <groupId>com.google.endpoints</groupId>
-    <artifactId>endpoints-management-control-appengine</artifactId>
-    <version>1.0.3</version>
-  </dependency>
-  <dependency>
-    <groupId>com.google.endpoints</groupId>
-    <artifactId>endpoints-framework-auth</artifactId>
-    <version1.0.3</version>
-  </dependency>
+    <dependency>
+      <groupId>com.google.endpoints</groupId>
+      <artifactId>endpoints-framework</artifactId>
+      <version>2.0.7</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.endpoints</groupId>
+      <artifactId>endpoints-management-control-appengine</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.endpoints</groupId>
+      <artifactId>endpoints-framework-auth</artifactId>
+      <version1.0.3</version>
+    </dependency>
 #end
 
     <!-- Test Dependencies -->
@@ -208,6 +208,12 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <excludes>
+            <exclude>javax.servlet:javax.servlet-api</exclude>
+            <exclude>com.google.guava:guava</exclude> <!-- avoid android version -->
+          </excludes>
+        </configuration>
       </plugin>
 
       <plugin>

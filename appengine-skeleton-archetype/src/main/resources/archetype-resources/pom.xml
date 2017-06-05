@@ -155,6 +155,12 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <excludes>
+            <exclude>javax.servlet:javax.servlet-api</exclude>
+            <exclude>com.google.guava:guava</exclude> <!-- avoid android version -->
+          </excludes>
+        </configuration>
       </plugin>
 
       <plugin>
