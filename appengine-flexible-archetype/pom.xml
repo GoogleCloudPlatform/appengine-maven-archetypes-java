@@ -15,14 +15,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <parent>
-    <groupId>com.google.appengine.archetypes</groupId>
-    <artifactId>archetypes</artifactId>
-    <version>1.0.0</version>
-  </parent>
-
   <groupId>com.google.appengine.archetypes</groupId>
   <artifactId>appengine-flexible-archetype</artifactId>
   <version>0.2.0</version>
@@ -30,5 +22,13 @@ limitations under the License.
 
   <name>appengine-flexible-archetype</name>
   <description>A basic Java application with Google App Engine Flexible.</description>
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.google.appengine.archetypes</groupId>
+    <artifactId>archetypes</artifactId>
+    <version>1.0.0</version>
+  </parent>
 
 </project>
