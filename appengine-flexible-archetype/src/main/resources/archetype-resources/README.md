@@ -33,8 +33,8 @@ $pound$pound$pound Test Only
 
 $pound$pound Modify the Skeleton
 
-As you add / modify the source code (`src/main/java/...`) it's very useful to add unit testing
-to (`src/main/test/...`).  The following resources are quite useful:
+As you add / modify the source code [(`src/main/java/...`)](src/main/java/) it's very useful to add unit testing
+to [(`src/main/test/...`)](src/main/test/).  The following resources are quite useful:
 
 * [Junit4](http://junit.org/junit4/)
 * [Mockito](http://mockito.org/)

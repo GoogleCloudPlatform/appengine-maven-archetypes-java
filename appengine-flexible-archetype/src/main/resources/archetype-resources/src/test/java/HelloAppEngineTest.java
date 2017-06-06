@@ -60,10 +60,6 @@ public class HelloAppEngineTest {
     servletUnderTest = new HelloAppEngine();
   }
 
-  @After public void tearDown() {
-
-  }
-
   @Test
   public void doGet_writesResponse() throws Exception {
     servletUnderTest.doGet(mockRequest, mockResponse);
