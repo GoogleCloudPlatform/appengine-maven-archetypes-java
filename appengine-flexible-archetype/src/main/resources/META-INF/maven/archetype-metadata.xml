@@ -37,12 +37,6 @@ limitations under the License.
       </includes>
     </fileSet>
 
-    <fileSet encoding="UTF-8">
-      <directory>eclipse-launch-profiles</directory>
-      <includes>
-        <include>**/*.launch</include>
-      </includes>
-    </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
@@ -53,8 +47,8 @@ limitations under the License.
     </fileSet>
   </fileSets>
   <requiredProperties>
-    <requiredProperty key="appengine-version">
-      <defaultValue>${appengine.sdk.version}</defaultValue>
+    <requiredProperty key="service">
+    	<defaultValue>default</defaultValue>
     </requiredProperty>
   </requiredProperties>
 </archetype-descriptor>
