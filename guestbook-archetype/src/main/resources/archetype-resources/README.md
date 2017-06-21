@@ -24,7 +24,7 @@ $pound$pound$pound Running locally
 #if ( $CloudSDK_Tooling == "true" )
     mvn appengine:run
 #else
-    mvn appengine:devappserver
+    mvn appengine:devserver
 #end
 
 $pound$pound$pound Deploying
