@@ -17,7 +17,7 @@ limitations under the License.
 <project>
   <groupId>com.google.appengine.archetypes</groupId>
   <artifactId>appengine-skeleton-archetype</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <packaging>maven-archetype</packaging>
 
   <name>appengine-skeleton-archetype</name>
