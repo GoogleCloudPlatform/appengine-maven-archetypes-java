@@ -19,7 +19,7 @@ export GOOGLE_VERSION_ID=${BUILD_ID}
 export CLOUDSDK_ACTIVE_CONFIG_NAME=ae-maven-archetypes-java
 
 apt-get clean && apt-get update
-apt-get install -qqy expect shellcheck unzip wget
+apt-get install -qqy expect shellcheck unzip wget maven gradle
 
 # Install gcloud
 if [ ! -d ${HOME}/google-cloud-sdk ]; then
@@ -30,27 +30,7 @@ if [ ! -d ${HOME}/google-cloud-sdk ]; then
     popd
 fi
 
-# Install maven
-if [ ! -d ${HOME}/maven ]; then
-    mkdir -p ${HOME}/maven
-    pushd "${HOME}/maven"
-    wget http://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
-    unzip apache-maven-3.3.9-bin.zip
-    mv apache-maven-3.3.9 apache-maven
-    popd
-fi
-
-# Install gradle
-if [ ! -d ${HOME}/gradle ]; then
-	mkdir -p ${HOME}/gradle
-    pushd "${HOME}/gradle"
-    wget https://services.gradle.org/distributions/gradle-3.3-bin.zip
-    unzip gradle-3.3-bin.zip
-    mv gradle-3.3 gradle
-    popd
-fi
-
-export PATH=${HOME}/google-cloud-sdk/bin:${HOME}/appengine-java-sdk/bin:${HOME}/maven/apache-maven/bin:${HOME}/gradle/gradle/bin:${PATH}
+export PATH=${HOME}/google-cloud-sdk/bin:${HOME}/appengine-java-sdk/bin:${PATH}
 gcloud -q components update app-engine-java
 java -version
 
