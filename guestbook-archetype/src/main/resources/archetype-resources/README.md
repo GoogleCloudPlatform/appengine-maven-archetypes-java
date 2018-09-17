@@ -2,6 +2,9 @@
 App Engine Java Guestbook
 =========================
 
+$pound$pound Notice
+This sample has been deprecated. 
+
 Sample guestbook for use with App Engine Java.
 
 See the [Google App Engine standard environment documentation][ae-docs] for more
