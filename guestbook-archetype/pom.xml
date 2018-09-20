@@ -25,10 +25,10 @@ limitations under the License.
 
   <groupId>com.google.appengine.archetypes</groupId>
   <artifactId>guestbook-archetype</artifactId>
-  <version>4.0.1</version>
+  <version>4.0.2</version>
   <packaging>maven-archetype</packaging>
 
   <name>guestbook-archetype</name>
-  <description>A guestbook application with Google App Engine</description>
+  <description>[DEPRECATED] A guestbook application with Google App Engine</description>
   <url>https://developers.google.com/appengine/</url>
 </project>
